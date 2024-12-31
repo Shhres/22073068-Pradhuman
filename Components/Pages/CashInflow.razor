@@ -1,0 +1,113 @@
+﻿@page "/cashinflow"
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="card shadow-lg" style="width: 100%; max-width: 500px;">
+            <div class="card-header bg-success text-white text-center">
+                <h3 class="mb-0">Cash Inflow</h3>
+            </div>
+            <div class="card-body p-4">
+                <form @onsubmit="HandleSubmit">
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea id="description" class="form-control form-control-lg" rows="3"
+                                  placeholder="Enter description" @bind="Description"></textarea>
+                    </div>
+
+                    <!-- Category (Text Field) -->
+                    <div class="mb-4">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" id="category" class="form-control form-control-lg"
+                               placeholder="Enter category" @bind="Category" />
+                    </div>
+
+                    <!-- Money Dropdown -->
+                    <div class="mb-4">
+                        <label for="amount" class="form-label">Amount</label>
+                        <select id="amount" class="form-select form-select-lg" @bind="Amount">
+                            <option value="0" disabled selected>-- Select Amount --</option>
+                            @for (int i = 1000; i <= 100000; i += 1000)
+                            {
+                                    <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+
+                    <!-- Validation Message -->
+                    @if (!string.IsNullOrEmpty(ValidationMessage))
+                    {
+                            <div class="alert alert-danger text-center" role="alert">
+                            @ValidationMessage
+                            </div>
+                    }
+
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2 mb-4">
+                        <button type="CashIn" class="btn btn-success btn-lg no-hover" style="width:100%;">
+                            CashIn
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                @if (TransactionCompleted)
+                {
+                        <div class="alert alert-success text-center" role="alert">
+                            Transaction Completed
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    // Properties for form fields
+    private string Description { get; set; } = string.Empty;
+    private string Category { get; set; } = string.Empty;
+    private int Amount { get; set; } = 0;
+
+    // Property for validation message
+    private string ValidationMessage { get; set; } = string.Empty;
+
+    // Property for transaction success message
+    private bool TransactionCompleted { get; set; } = false;
+
+    // Method to handle form submission
+    private void HandleSubmit()
+    {
+        // Check if all fields are filled
+        if (string.IsNullOrEmpty(Description) ||
+            string.IsNullOrEmpty(Category) ||
+            Amount == 0)
+        {
+            ValidationMessage = "Please fill up the form completely.";
+            TransactionCompleted = false; // Reset transaction completion message
+        }
+        else
+        {
+            // Reset validation message and mark transaction as complete
+            ValidationMessage = string.Empty;
+            TransactionCompleted = true;
+
+            // Process the form data (e.g., save to database, send API request)
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Category: {Category}");
+            Console.WriteLine($"Amount: {Amount}");
+
+            // Optionally reset form fields after submission
+            Description = string.Empty;
+            Category = string.Empty;
+            Amount = 0;
+        }
+    }
+}
+
+<style>
+    /* Disable hover effect on the submit button */
+    .no-hover:hover {
+        background-color: #28a745 !important; /* Retain the original background color */
+        border-color: #28a745 !important; /* Retain the original border color */
+    }
+</style>

@@ -2,25 +2,31 @@
 
 @inject NavigationManager NavigationManager
 
-
-
-<h3>Welcome to your Dashboard</h3>
-
-
-<p>Here is your user dashboard.</p>
-
-
-<button @onclick="Logout">Logout</button>
-
-
-@code {
-
-    private void Logout()
-
-    {
-
-        NavigationManager.NavigateTo("/"); // Redirect to login page
-
+<style>
+    .dashboard-container {
+        display: flex;
+        flex-direction: column; /* Allows stacking of items vertically */
+        justify-content: flex-end; /* Pushes content to the bottom */
+        align-items: center; /* Centers items horizontally */
+        height: 100vh; /* Full viewport height */
+        font-family: Arial, sans-serif;
+        padding: 20px; /* Adds spacing inside the container */
+        box-sizing: border-box; /* Ensures padding doesn't affect the height */
     }
 
-}
+    .logout-button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 50px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+</style>
+
+
