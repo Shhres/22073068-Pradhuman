@@ -1,0 +1,26 @@
+﻿@page "/dashboard"
+
+@inject NavigationManager NavigationManager
+
+
+
+<h3>Welcome to your Dashboard</h3>
+
+
+<p>Here is your user dashboard.</p>
+
+
+<button @onclick="Logout">Logout</button>
+
+
+@code {
+
+    private void Logout()
+
+    {
+
+        NavigationManager.NavigateTo("/"); // Redirect to login page
+
+    }
+
+}
