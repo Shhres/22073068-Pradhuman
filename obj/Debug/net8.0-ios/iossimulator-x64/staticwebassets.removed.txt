@@ -1,0 +1,2 @@
+C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\bootstrap\bootstrap.min.css
+C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\bootstrap\bootstrap.min.css.map

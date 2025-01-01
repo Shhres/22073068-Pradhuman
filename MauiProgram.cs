@@ -19,6 +19,7 @@ namespace MauiApp1
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddMauiBlazorWebView();
 
+
             // Configure HttpClient
             builder.Services.AddSingleton(new HttpClient
             {

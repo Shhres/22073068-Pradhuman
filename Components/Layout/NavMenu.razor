@@ -1,51 +1,44 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <i class="bi bi-bar-chart-line-fill"></i> Smart Expense Tracker
-        @* <a class="navbar-brand" href="dashboard"> Smart Expense Tracker</a> *@
+    <div class="container-fluid d-flex justify-content-between">
+        <i class="bi bi-bar-chart-line-fill"></i>
+        <span>Smart Expense Tracker</span>
     </div>
 </div>
 
-
+<!-- The Toggler Button for the Menu -->
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
+<!-- The Collapsible Navigation -->
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
-
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.All">
-                <span class="bi bi-coin-nav-menu" aria-hidden="true"></span> Dashboard
+                <i class="bi bi-house-door" aria-hidden="true"></i> Dashboard
             </NavLink>
         </div>
 
-     
-
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="cashinflow" Match="NavLinkMatch.All">
-                <span class="bi bi-coin-nav-menu" aria-hidden="true"></span> CashInflow
+                <i class="bi bi-wallet2" aria-hidden="true"></i> Cash Inflow
             </NavLink>
         </div>
 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="cashoutflow" Match="NavLinkMatch.All">
-                <span class="bi bi-coin-nav-menu" aria-hidden="true"></span> CashOutflow
+                <i class="bi bi-cash-coin" aria-hidden="true"></i> Cash Outflow
             </NavLink>
         </div>
 
-          <div class="nav-item px-3">
+        <div class="nav-item px-3">
             <NavLink class="nav-link" href="debit" Match="NavLinkMatch.All">
-                <span class="bi bi-coin-nav-menu" aria-hidden="true"></span> Debit
+                <i class="bi bi-credit-card" aria-hidden="true"></i> Debit
             </NavLink>
         </div>
 
-     
-  
-
-   <div class="nav-item px-3">
-         <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
-             <span class="bi bi-coin-nav-menu" aria-hidden="true"></span> LogOut
-         </NavLink>
-     </div>
-
-        
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <i class="bi bi-box-arrow-right" aria-hidden="true"></i> Log Out
+            </NavLink>
+        </div>
     </nav>
 </div>

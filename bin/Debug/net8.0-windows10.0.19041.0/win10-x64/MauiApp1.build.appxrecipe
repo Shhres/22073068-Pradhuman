@@ -43,11 +43,8 @@
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\bootstrap\bootstrap.min.css">
-      <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\bootstrap\bootstrap.min.css.map">
-      <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
+    <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\css\dotnet.jpg">
+      <PackagePath>wwwroot\css\dotnet.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
@@ -210,6 +207,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet.scale-100.jpg">
+      <PackagePath>dotnet.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
@@ -509,7 +509,7 @@
       <PackagePath>wwwroot\MauiApp1.styles.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\MauiApp1.bundle.scp.css">
-      <PackagePath>wwwroot\MauiApp1.iv7gmav2zv.bundle.scp.css</PackagePath>
+      <PackagePath>wwwroot\MauiApp1.dopgy7fttg.bundle.scp.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>

@@ -1,74 +1,75 @@
 ﻿@page "/dashboard"
 @inject NavigationManager Navigation
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-center">
-        <div class="card shadow-lg" style="width: 100%; max-width: 700px;">
-            <div class="card-header bg-primary text-white text-center">
-                <h3 class="mb-0">Dashboard</h3>
-            </div>
-            <div class="card-body p-4">
-                <div class="row">
-                    <!-- Left side - Total Amount -->
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <h5 class="mb-2">Total Amount Available</h5>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <span class="h4">
-                                    @if (isAmountVisible)
-                                    {
-                                        <span>@($"${totalAmount:F2}")</span>
-                                    }
-                                    else
-                                    {
-                                        <span>••••••</span>
-                                    }
-                                </span>
-                                <button class="btn btn-link" @onclick="ToggleAmountVisibility">
-                                    @if (isAmountVisible)
-                                    {
-                                        <i class="bi bi-eye-slash text-dark"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-eye text-dark"></i>
-                                    }
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+<div class="container-fluid p-0">
+    <!-- Header Section -->
+    <div class="text-center py-3 bg-primary">
+        <h1 class="mb-0" style="color: black; font-weight: bold;">Dashboard</h1>
+        <p class="mt-1" style="color: black; font-weight: bold;">A summary of your financial details</p>
+    </div>
 
-                    <!-- Right side - Loan Amount -->
-                    <div class="col-md-6 mb-4">
-                        <div class="text-center">
-                            <h5 class="mb-2">Loan Amount Taken</h5>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <span class="h4">
-                                    @if (isLoanVisible)
-                                    {
-                                        <span>@($"${loanAmount:F2}")</span>
-                                    }
-                                    else
-                                    {
-                                        <span>••••••</span>
-                                    }
-                                </span>
-                                <button class="btn btn-link" @onclick="ToggleLoanVisibility">
-                                    @if (isLoanVisible)
-                                    {
-                                        <i class="bi bi-eye-slash text-dark"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-eye text-dark"></i>
-                                    }
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Total and Loan Amount Section -->
+    <div class="py-5 bg-white">
+        <div class="row mx-3">
+            <!-- Left Side: Total Amount -->
+            <div class="col-md-6 text-end mb-4">
+                <h5>Total Amount</h5>
+                <div class="d-flex justify-content-end align-items-center">
+                    <span class="h4">
+                        @if (isAmountVisible)
+                        {
+                                    <span>@($"${totalAmount:F2}")</span>
+                        }
+                        else
+                        {
+                                    <span>••••••</span>
+                        }
+                    </span>
+                    <button class="btn btn-link" @onclick="ToggleAmountVisibility">
+                        @if (isAmountVisible)
+                        {
+                                    <i class="bi bi-eye-slash text-dark"></i>
+                        }
+                        else
+                        {
+                                    <i class="bi bi-eye text-dark"></i>
+                        }
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Loan Amount -->
+            <div class="col-md-6 text-end mb-4">
+                <h5>Loan Amount</h5>
+                <div class="d-flex justify-content-end align-items-center">
+                    <span class="h4">
+                        @if (isLoanVisible)
+                        {
+                                    <span>@($"${loanAmount:F2}")</span>
+                        }
+                        else
+                        {
+                                    <span>••••••</span>
+                        }
+                    </span>
+                    <button class="btn btn-link" @onclick="ToggleLoanVisibility">
+                        @if (isLoanVisible)
+                        {
+                                    <i class="bi bi-eye-slash text-dark"></i>
+                        }
+                        else
+                        {
+                                    <i class="bi bi-eye text-dark"></i>
+                        }
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Image Background Section -->
+    <div class="vh-50" style="background-image: url('css/dotnet.jpg'); background-size: cover; background-position: center; height: 50vh;">
+        <!-- Empty content; image serves as decoration -->
     </div>
 </div>
 

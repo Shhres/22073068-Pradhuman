@@ -22,16 +22,23 @@
                                placeholder="Enter category" @bind="Category" />
                     </div>
 
-                    <!-- Amount -->
-                    <div class="mb-4">
-                        <label for="amount" class="form-label">Amount</label>
-                        <select id="amount" class="form-select form-select-lg" @bind="Amount">
-                            <option value="0" disabled selected>-- Select Amount --</option>
-                            @for (int i = 1000; i <= 100000; i += 1000)
-                            {
-                                    <option value="@i">@i</option>
-                            }
-                        </select>
+                    <!-- Amount and Loan Amount side by side -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="amount" class="form-label">Amount</label>
+                            <select id="amount" class="form-select form-select-lg" @bind="Amount">
+                                <option value="0" disabled selected>-- Select Amount --</option>
+                                @for (int i = 1000; i <= 100000; i += 1000)
+                                {
+                                        <option value="@i">@i</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="loanAmount" class="form-label">Loan Amount</label>
+                            <input type="number" id="loanAmount" class="form-control form-control-lg"
+                                   placeholder="Enter loan amount" @bind="LoanAmount" />
+                        </div>
                     </div>
 
                     <!-- Cash In Button -->
@@ -66,12 +73,13 @@
     private string Description { get; set; } = string.Empty;
     private string Category { get; set; } = string.Empty;
     private int Amount { get; set; } = 0;
+    private int LoanAmount { get; set; } = 0; // New field for loan amount
     private string ValidationMessage { get; set; } = string.Empty;
     private bool TransactionCompleted { get; set; } = false;
 
     private void HandleSubmit()
     {
-        if (string.IsNullOrEmpty(Description) || string.IsNullOrEmpty(Category) || Amount == 0)
+        if (string.IsNullOrEmpty(Description) || string.IsNullOrEmpty(Category) || Amount == 0 || LoanAmount == 0)
         {
             ValidationMessage = "Please fill out all fields.";
             TransactionCompleted = false;
@@ -85,11 +93,13 @@
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Category: {Category}");
             Console.WriteLine($"Amount: {Amount}");
+            Console.WriteLine($"Loan Amount: {LoanAmount}");
 
             // Reset form fields after submission
             Description = string.Empty;
             Category = string.Empty;
             Amount = 0;
+            LoanAmount = 0; // Reset loan amount
         }
     }
 }

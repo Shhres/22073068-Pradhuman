@@ -9,12 +9,8 @@
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
+      "PackagePath": "staticwebassets\\css\\dotnet.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",

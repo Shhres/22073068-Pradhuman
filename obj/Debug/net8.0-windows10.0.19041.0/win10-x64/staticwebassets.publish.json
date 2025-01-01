@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fgmn1FiWsOoEGsthwOG8IjHxiuezTpGWkmcNqNFc79Q=",
+  "Hash": "v4FJ0sa+O5ICg7jkxvpvj+2FuT5ks4LWIt5ogyZXyiE=",
   "Source": "MauiApp1",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "iv7gmav2zv",
-      "Integrity": "3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=",
+      "Fingerprint": "dopgy7fttg",
+      "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\MauiApp1.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "iv7gmav2zv",
-      "Integrity": "3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=",
+      "Fingerprint": "dopgy7fttg",
+      "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css"
@@ -73,19 +73,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dex3usdpik",
-      "Integrity": "K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ=",
+      "Fingerprint": "h35e2ij73l",
+      "Integrity": "szT6bDZrvKzp2LV4eNxiOO/nrWR79kuCbizw7ImbU/M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "SourceId": "MauiApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint}]?.css",
+      "RelativePath": "css/dotnet#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -94,32 +94,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6gzpyzhau4",
-      "Integrity": "SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=",
+      "Fingerprint": "cd8ubdvr0a",
+      "Integrity": "IItqeh+CxVi2lj9g++qbYEDyKsxGvP4kE+bXEb3oZfs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "SourceId": "MauiApp1",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "8inm30yfxf",
-      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+      "OriginalItemSpec": "wwwroot\\css\\dotnet.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",
@@ -157,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cjxieb730d",
-      "Integrity": "SITx/QPVfJBCGpJfbq3mtzWYrwpsUcC6pdoIgt6AsbI=",
+      "Fingerprint": "ytq2hpl0as",
+      "Integrity": "qgaaD6lh+rGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -176,7 +155,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3339"
+          "Value": "3346"
         },
         {
           "Name": "Content-Type",
@@ -184,11 +163,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ=\""
+          "Value": "\"szT6bDZrvKzp2LV4eNxiOO/nrWR79kuCbizw7ImbU/M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
+          "Value": "Wed, 01 Jan 2025 16:04:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -198,12 +177,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ="
+          "Value": "sha256-szT6bDZrvKzp2LV4eNxiOO/nrWR79kuCbizw7ImbU/M="
         }
       ]
     },
     {
-      "Route": "css/app.dex3usdpik.css",
+      "Route": "css/app.h35e2ij73l.css",
       "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -213,7 +192,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3339"
+          "Value": "3346"
         },
         {
           "Name": "Content-Type",
@@ -221,11 +200,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ=\""
+          "Value": "\"szT6bDZrvKzp2LV4eNxiOO/nrWR79kuCbizw7ImbU/M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
+          "Value": "Wed, 01 Jan 2025 16:04:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -235,7 +214,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dex3usdpik"
+          "Value": "h35e2ij73l"
         },
         {
           "Name": "label",
@@ -243,13 +222,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-K1bY5kgLeD7nMlhLfmEK3TdjOVTQGBzyOIF4YwRlzuQ="
+          "Value": "sha256-szT6bDZrvKzp2LV4eNxiOO/nrWR79kuCbizw7ImbU/M="
         }
       ]
     },
     {
-      "Route": "css/bootstrap/bootstrap.min.6gzpyzhau4.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Route": "css/dotnet.cd8ubdvr0a.jpg",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -258,19 +237,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162726"
+          "Value": "35519"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
-          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+          "Value": "\"IItqeh+CxVi2lj9g++qbYEDyKsxGvP4kE+bXEb3oZfs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
+          "Value": "Wed, 01 Jan 2025 16:44:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -280,21 +259,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6gzpyzhau4"
+          "Value": "cd8ubdvr0a"
         },
         {
           "Name": "label",
-          "Value": "css/bootstrap/bootstrap.min.css"
+          "Value": "css/dotnet.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+          "Value": "sha256-IItqeh+CxVi2lj9g++qbYEDyKsxGvP4kE+bXEb3oZfs="
         }
       ]
     },
     {
-      "Route": "css/bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Route": "css/dotnet.jpg",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -303,111 +282,29 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162726"
+          "Value": "35519"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
-          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+          "Value": "\"IItqeh+CxVi2lj9g++qbYEDyKsxGvP4kE+bXEb3oZfs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
+          "Value": "Wed, 01 Jan 2025 16:44:10 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
-        }
-      ]
-    },
-    {
-      "Route": "css/bootstrap/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "449111"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "8inm30yfxf"
-        },
-        {
-          "Name": "label",
-          "Value": "css/bootstrap/bootstrap.min.css.map"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
-        }
-      ]
-    },
-    {
-      "Route": "css/bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "449111"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 10 Dec 2024 04:55:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+          "Value": "sha256-IItqeh+CxVi2lj9g++qbYEDyKsxGvP4kE+bXEb3oZfs="
         }
       ]
     },
@@ -494,51 +391,6 @@
       ]
     },
     {
-      "Route": "index.cjxieb730d.html",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1175"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SITx/QPVfJBCGpJfbq3mtzWYrwpsUcC6pdoIgt6AsbI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 30 Dec 2024 16:53:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cjxieb730d"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-SITx/QPVfJBCGpJfbq3mtzWYrwpsUcC6pdoIgt6AsbI="
-        }
-      ]
-    },
-    {
       "Route": "index.html",
       "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
       "Selectors": [],
@@ -549,7 +401,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1175"
+          "Value": "1301"
         },
         {
           "Name": "Content-Type",
@@ -557,11 +409,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SITx/QPVfJBCGpJfbq3mtzWYrwpsUcC6pdoIgt6AsbI=\""
+          "Value": "\"qgaaD6lh+rGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 30 Dec 2024 16:53:46 GMT"
+          "Value": "Wed, 01 Jan 2025 16:06:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -571,7 +423,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SITx/QPVfJBCGpJfbq3mtzWYrwpsUcC6pdoIgt6AsbI="
+          "Value": "sha256-qgaaD6lh+rGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs="
+        }
+      ]
+    },
+    {
+      "Route": "index.ytq2hpl0as.html",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1301"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qgaaD6lh+rGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Jan 2025 16:06:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytq2hpl0as"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qgaaD6lh+rGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs="
         }
       ]
     },
@@ -586,7 +483,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6016"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +491,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 16:58:39 GMT"
+          "Value": "Wed, 01 Jan 2025 18:05:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,12 +505,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     },
     {
-      "Route": "MauiApp1.iv7gmav2zv.bundle.scp.css",
+      "Route": "MauiApp1.dopgy7fttg.bundle.scp.css",
       "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -623,7 +520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6016"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -631,11 +528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 16:58:39 GMT"
+          "Value": "Wed, 01 Jan 2025 18:05:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -645,7 +542,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "iv7gmav2zv"
+          "Value": "dopgy7fttg"
         },
         {
           "Name": "label",
@@ -653,12 +550,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     },
     {
-      "Route": "MauiApp1.iv7gmav2zv.styles.css",
+      "Route": "MauiApp1.dopgy7fttg.styles.css",
       "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\MauiApp1.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -668,7 +565,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6016"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -676,11 +573,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 16:58:39 GMT"
+          "Value": "Wed, 01 Jan 2025 18:05:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -690,7 +587,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "iv7gmav2zv"
+          "Value": "dopgy7fttg"
         },
         {
           "Name": "label",
@@ -698,7 +595,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     },
@@ -713,7 +610,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6016"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -721,11 +618,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 31 Dec 2024 16:58:39 GMT"
+          "Value": "Wed, 01 Jan 2025 18:05:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -735,7 +632,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3jn4xZYLlRo7B3aE/nmoDSqpNoJxsYzVlC5GXLr1NUE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     }
