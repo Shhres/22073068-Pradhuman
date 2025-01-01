@@ -1,4 +1,6 @@
 ﻿@page "/cashoutflow"
+@inject HttpClient Http
+@inject NavigationManager Navigation
 
 <div class="container mt-5">
     <div class="d-flex justify-content-center">
@@ -11,7 +13,7 @@
                     <!-- Recipient Name -->
                     <div class="mb-4">
                         <label for="recipientName" class="form-label">Recipient Name</label>
-                        <input type="text" id="recipientName" class="form-control form-control-lg" 
+                        <input type="text" id="recipientName" class="form-control form-control-lg"
                                placeholder="Enter recipient name" @bind="RecipientName" />
                     </div>
 
@@ -41,7 +43,7 @@
                             <option value="0" disabled selected>-- Select Amount --</option>
                             @for (int i = 1000; i <= 100000; i += 1000)
                             {
-                                    <option value="@i">@i</option>
+                                <option value="@i">@i</option>
                             }
                         </select>
                     </div>
@@ -49,17 +51,17 @@
                     <!-- Validation Message -->
                     @if (!string.IsNullOrEmpty(ValidationMessage))
                     {
-                            <div class="alert alert-danger text-center" role="alert">
+                        <div class="alert alert-danger text-center" role="alert">
                             @ValidationMessage
-                            </div>
+                        </div>
                     }
 
                     <!-- Success Message -->
                     @if (TransactionSuccess)
                     {
-                            <div class="alert alert-success text-center" role="alert">
-                                Transaction Successful!
-                            </div>
+                        <div class="alert alert-success text-center" role="alert">
+                            Transaction Successful! Redirecting...
+                        </div>
                     }
 
                     <!-- Submit Button -->
@@ -73,22 +75,16 @@
 </div>
 
 @code {
-    // Properties for form fields
     private string RecipientName { get; set; } = string.Empty;
     private string Description { get; set; } = string.Empty;
     private string Category { get; set; } = string.Empty;
     private int Amount { get; set; } = 0;
 
-    // Property for validation message
     private string ValidationMessage { get; set; } = string.Empty;
-
-    // Property for transaction success message
     private bool TransactionSuccess { get; set; } = false;
 
-    // Method to handle form submission
-    private void HandleSubmit()
+    private async Task HandleSubmit()
     {
-        // Check if all fields are filled
         if (string.IsNullOrEmpty(RecipientName) ||
             string.IsNullOrEmpty(Description) ||
             string.IsNullOrEmpty(Category) ||
@@ -99,15 +95,43 @@
         }
         else
         {
-            // Reset validation message and show success message
             ValidationMessage = string.Empty;
-            TransactionSuccess = true;
 
-            // Process the form data (e.g., save to database, send API request)
-            Console.WriteLine($"Recipient Name: {RecipientName}");
-            Console.WriteLine($"Description: {Description}");
-            Console.WriteLine($"Category: {Category}");
-            Console.WriteLine($"Amount: {Amount}");
+            var request = new
+            {
+                RecipientName,
+                Description,
+                Category,
+                Amount
+            };
+
+            try
+            {
+                var response = await Http.PostAsJsonAsync("api/Transactions/cashoutflow", request);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<dynamic>();
+                    TransactionSuccess = result?.Success ?? false;
+
+                    // Simulate receipt generation and redirection
+                    if (TransactionSuccess)
+                    {
+                        await Task.Delay(2000); // Simulate processing delay
+                        Navigation.NavigateTo("/cashinflow");
+                    }
+                }
+                else
+                {
+                    ValidationMessage = "Failed to process the transaction. Try again later.";
+                    TransactionSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                ValidationMessage = $"Error: {ex.Message}";
+                TransactionSuccess = false;
+            }
         }
     }
 }
