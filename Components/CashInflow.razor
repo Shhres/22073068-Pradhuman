@@ -1,0 +1,33 @@
+﻿@page "/CashInflow"
+<h3 class="text-2xl font-semibold mb-4">Cash Inflow</h3>
+
+<form method="post" action="/submit-cashinflow" class="space-y-4" id="cash-inflow-form">
+    <div>
+        <label for="amount" class="block text-lg font-medium text-gray-700">Amount:</label>
+        <input type="text" id="amount" name="amount" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    <div>
+        <label for="description" class="block text-lg font-medium text-gray-700">Description:</label>
+        <textarea id="description" name="description" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+    </div>
+
+    <div>
+        <label for="label" class="block text-lg font-medium text-gray-700">Label:</label>
+        <input type="text" id="label" name="label" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    <div class="flex justify-between items-center">
+        <button type="submit" class="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Submit
+        </button>
+    </div>
+</form>
+
+<script>
+    // Prevent form submission for debugging purposes
+    document.querySelector('#cash-inflow-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent actual form submission
+        alert('Form submitted successfully!');
+    });
+</script>

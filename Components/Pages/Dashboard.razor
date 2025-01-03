@@ -1,5 +1,8 @@
 ﻿@page "/dashboard"
+@using MauiApp1.Models
 @inject NavigationManager Navigation
+@using MauiApp1.Components.Layout
+@inject UserService UserService
 
 <div class="container-fluid p-0">
     <!-- Header Section -->
@@ -8,58 +11,31 @@
         <p class="mt-1" style="color: black; font-weight: bold;">A summary of your financial details</p>
     </div>
 
-    <!-- Total and Loan Amount Section -->
+    <!-- Total Amount Section -->
     <div class="py-5 bg-white">
         <div class="row mx-3">
-            <!-- Left Side: Total Amount -->
-            <div class="col-md-6 text-end mb-4">
+            <!-- Total Amount -->
+            <div class="col-md-12 text-center mb-4">
                 <h5>Total Amount</h5>
-                <div class="d-flex justify-content-end align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
                     <span class="h4">
                         @if (isAmountVisible)
                         {
-                                    <span>@($"${totalAmount:F2}")</span>
+                            <span>@($"${TotalAmount:F2}")</span>
                         }
                         else
                         {
-                                    <span>••••••</span>
+                            <span>••••••</span>
                         }
                     </span>
                     <button class="btn btn-link" @onclick="ToggleAmountVisibility">
                         @if (isAmountVisible)
                         {
-                                    <i class="bi bi-eye-slash text-dark"></i>
+                            <i class="bi bi-eye-slash text-dark"></i>
                         }
                         else
                         {
-                                    <i class="bi bi-eye text-dark"></i>
-                        }
-                    </button>
-                </div>
-            </div>
-
-            <!-- Right Side: Loan Amount -->
-            <div class="col-md-6 text-end mb-4">
-                <h5>Loan Amount</h5>
-                <div class="d-flex justify-content-end align-items-center">
-                    <span class="h4">
-                        @if (isLoanVisible)
-                        {
-                                    <span>@($"${loanAmount:F2}")</span>
-                        }
-                        else
-                        {
-                                    <span>••••••</span>
-                        }
-                    </span>
-                    <button class="btn btn-link" @onclick="ToggleLoanVisibility">
-                        @if (isLoanVisible)
-                        {
-                                    <i class="bi bi-eye-slash text-dark"></i>
-                        }
-                        else
-                        {
-                                    <i class="bi bi-eye text-dark"></i>
+                            <i class="bi bi-eye text-dark"></i>
                         }
                     </button>
                 </div>
@@ -75,18 +51,26 @@
 
 @code {
     private bool isAmountVisible = false;
-    private bool isLoanVisible = false;
+    private decimal TotalAmount = 0m;
 
-    private decimal totalAmount = 1000.00m;
-    private decimal loanAmount = 500.00m;
+    private AppData Data;
+    private List<User> Users = new List<User>();
+
+    private List<Transaction> Transactions => Data?.Transactions ?? new List<Transaction>();
+
+    protected override void OnInitialized()
+    {
+        // Load users from UserService when the component is initialized
+        Users = UserService.LoadUsers();
+
+        // Calculate Total Amount
+        var totalCredit = Transactions.Sum(t => t.Credit);
+        var totalDebit = Transactions.Sum(t => t.Debit);
+        TotalAmount = totalCredit - totalDebit;
+    }
 
     private void ToggleAmountVisibility()
     {
         isAmountVisible = !isAmountVisible;
-    }
-
-    private void ToggleLoanVisibility()
-    {
-        isLoanVisible = !isLoanVisible;
     }
 }
