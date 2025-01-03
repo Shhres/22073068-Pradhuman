@@ -4,47 +4,64 @@
 @using MauiApp1.Components.Layout
 @inject UserService UserService
 
-
-
 <div class="container-fluid p-6">
-   
 
     <!-- Transaction Summary Section -->
     <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
         <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Transaction Summary</h5>
         <div class="grid grid-cols-2 gap-6">
+
+            <!-- Total Credit Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Credit</h6>
-                <p class="text-xl text-green-600">@($"${Transactions.Sum(t => t.Credit):F2}")</p>
+                <p class="text-xl text-green-600">
+                    @(showAmounts ? $"${Transactions.Sum(t => t.Credit):F2}" : "***")
+                </p>
             </div>
 
-
+            <!-- Total Debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Debt</h6>
-                <p class="text-xl text-red-600">@($"${Transactions.Sum(t => t.Debit):F2}")</p>
+                <p class="text-xl text-red-600">
+                    @(showAmounts ? $"${Transactions.Sum(t => t.Debit):F2}" : "***")
+                </p>
             </div>
 
+            <!-- Total Amount Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
-                <p class="text-xl text-blue-600">@($"${Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}")</p>
+                <p class="text-xl text-blue-600">
+                    @(showAmounts ? $"${Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}" : "***")
+                </p>
             </div>
 
+            <!-- Pending Loan Amount Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Pending Loan Amount</h6>
-                <p class="text-xl text-yellow-600">@($"${Transactions.Sum(t => t.LoanAmount):F2}")</p>
+                <p class="text-xl text-yellow-600">
+                    @(showAmounts ? $"${Transactions.Sum(t => t.LoanAmount):F2}" : "***")
+                </p>
             </div>
         </div>
+
+        <!-- Show/Hide Amounts Button -->
+        <button class="text-lg text-blue-500 mt-4 w-full py-2" @onclick="ToggleAmountsVisibility">
+            @(showAmounts ? "Hide Amounts" : "Show Amounts")
+        </button>
     </div>
 
     <!-- Image Background Section -->
     <div class="h-80 bg-cover bg-center rounded-lg" style="background-image: url('css/dotnet.jpg');">
         <!-- Empty content; image serves as decoration -->
     </div>
+
 </div>
 
 @code {
     private AppData? Data;  // Use nullable reference type
     private List<User> Users = new List<User>();
+
+    private bool showAmounts = false; // Boolean to toggle showing amounts
 
     private List<Transaction> Transactions => Data?.Transactions ?? new List<Transaction>();
 
@@ -55,5 +72,11 @@
 
         // Load users from UserService when the component is initialized
         Users = UserService.LoadUsers();
+    }
+
+    // Method to toggle the visibility of amounts
+    private void ToggleAmountsVisibility()
+    {
+        showAmounts = !showAmounts;
     }
 }

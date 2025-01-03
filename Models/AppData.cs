@@ -13,4 +13,3 @@ namespace MauiApp1.Models
         public List<Transaction> Transactions { get; set; } = new();
     }
 }
-

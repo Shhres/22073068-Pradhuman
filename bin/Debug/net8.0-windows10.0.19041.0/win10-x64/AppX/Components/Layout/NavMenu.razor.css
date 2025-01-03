@@ -1,9 +1,8 @@
-/* Navbar Title Styling */
 .top-row {
     height: 3.5rem;
     background-color: rgba(0,0,0,0.4);
     display: flex;
-    color:white;
+    color: white;
     align-items: center; /* Center vertically */
     padding-left: 1rem;
 }
@@ -37,6 +36,7 @@
 .nav-item {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem; /* Added margin to avoid congestion */
 }
 
     .nav-item:first-of-type {
@@ -76,10 +76,19 @@
 /* Collapsible Navigation */
 .nav-scrollable {
     display: none;
+    overflow-y: auto; /* Ensure content is scrollable */
+    max-height: 100vh; /* Prevent overflow */
+    padding-right: 0.5rem; /* Adjust padding to avoid congestion */
 }
 
 .navbar-toggler:checked ~ .nav-scrollable {
     display: block;
+}
+
+/* Fix for small screen when the sidebar is toggled */
+.navbar-toggler:checked + .nav-scrollable {
+    padding-top: 0.5rem; /* Adjust top padding when toggled */
+    padding-left: 1rem; /* Ensure spacing on the left */
 }
 
 @media (min-width: 641px) {
@@ -88,9 +97,11 @@
     }
 
     .nav-scrollable {
-        /* Never collapse the sidebar for wide screens */
         display: block;
-        height: calc(100vh - 3.5rem);
+        height: calc(100vh - 3.5rem); /* Ensure full screen height */
         overflow-y: auto;
+        padding-top: 1rem; /* Add some space from the top */
     }
 }
+
+</style >

@@ -3,51 +3,6 @@
   "ManifestType": "Publish",
   "Endpoints": [
     {
-      "Route": "MauiApp1.dopgy7fttg.styles.css",
-      "AssetFile": "MauiApp1.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4501"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 18:05:58 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dopgy7fttg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
-        },
-        {
-          "Name": "label",
-          "Value": "MauiApp1.styles.css"
-        }
-      ]
-    },
-    {
       "Route": "MauiApp1.styles.css",
       "AssetFile": "MauiApp1.styles.css",
       "Selectors": [],
@@ -62,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4501"
+          "Value": "5019"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +25,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
+          "Value": "\"MEf0hwrNEsnVG/Wjh+0du+xXr7pn7s73ZFrRAqNeh4Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 18:05:58 GMT"
+          "Value": "Fri, 03 Jan 2025 22:03:52 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
+          "Value": "sha256-MEf0hwrNEsnVG/Wjh+0du+xXr7pn7s73ZFrRAqNeh4Y="
+        }
+      ]
+    },
+    {
+      "Route": "MauiApp1.wgf2qhk21w.styles.css",
+      "AssetFile": "MauiApp1.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5019"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MEf0hwrNEsnVG/Wjh+0du+xXr7pn7s73ZFrRAqNeh4Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jan 2025 22:03:52 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wgf2qhk21w"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MEf0hwrNEsnVG/Wjh+0du+xXr7pn7s73ZFrRAqNeh4Y="
+        },
+        {
+          "Name": "label",
+          "Value": "MauiApp1.styles.css"
         }
       ]
     },

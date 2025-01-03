@@ -8,36 +8,43 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
         <div>
             <label for="searchTitle" class="block text-sm font-medium text-gray-700 mb-1">Search by Title</label>
-            <input id="searchTitle" type="text" @bind-value="searchTitle" 
-                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            <input id="searchTitle" type="text" @bind-value="searchTitle"
+                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                    placeholder="Enter transaction title" />
         </div>
 
         <div>
             <label for="searchDate" class="block text-sm font-medium text-gray-700 mb-1">Search by Date</label>
-            <input id="searchDate" type="date" @bind-value="searchDate" 
+            <input id="searchDate" type="date" @bind-value="searchDate"
                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div>
             <label for="searchId" class="block text-sm font-medium text-gray-700 mb-1">Search by Transaction ID</label>
-            <input id="searchId" type="number" @bind-value="searchId" 
-                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            <input id="searchId" type="number" @bind-value="searchId"
+                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                    placeholder="Enter transaction ID" />
         </div>
 
         <div>
             <label for="searchLabel" class="block text-sm font-medium text-gray-700 mb-1">Search by Label</label>
-            <input id="searchLabel" type="text" @bind-value="searchLabel" 
-                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            <input id="searchLabel" type="text" @bind-value="searchLabel"
+                   class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                    placeholder="Enter label" />
         </div>
     </div>
 
-    <button @onclick="HandleSearch" 
+    <button @onclick="HandleSearch"
             class="w-full px-6 py-3 text-white bg-blue-600 font-semibold rounded-lg shadow-sm hover:bg-blue-700 transition-all">
         Search
     </button>
+
+    @if (noDataFound)
+    {
+        <div class="mt-4 text-center text-red-500 font-semibold">
+            <p>No data found for your search criteria.</p>
+        </div>
+    }
 
     <div class="mt-8 overflow-x-auto">
         <table class="w-full border border-gray-300 rounded-lg overflow-hidden">
@@ -56,16 +63,16 @@
             <tbody class="bg-white divide-y divide-gray-100">
                 @foreach (var transaction in filteredTransactions)
                 {
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-3 text-sm text-gray-800">@transaction.Id</td>
-                            <td class="px-6 py-3 text-sm text-gray-800">@transaction.Title</td>
-                            <td class="px-6 py-3 text-sm text-gray-800">@transaction.Description</td>
-                            <td class="px-6 py-3 text-sm text-gray-800 font-bold">@((Data.Transactions.Sum(t => t.Credit) - Data.Transactions.Sum(t => t.Debit)).ToString("C"))</td>
-                            <td class="px-6 py-3 text-sm text-red-500">@transaction.Debit.ToString("C")</td>
-                            <td class="px-6 py-3 text-sm text-green-500">@transaction.Credit.ToString("C")</td>
-                            <td class="px-6 py-3 text-sm text-gray-800">@transaction.Date.ToString("MM/dd/yyyy")</td>
-                            <td class="px-6 py-3 text-sm text-gray-800">@transaction.Description</td>
-                        </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-3 text-sm text-gray-800">@transaction.Id</td>
+                        <td class="px-6 py-3 text-sm text-gray-800">@transaction.Title</td>
+                        <td class="px-6 py-3 text-sm text-gray-800">@transaction.Description</td>
+                        <td class="px-6 py-3 text-sm text-gray-800 font-bold">@((Data.Transactions.Sum(t => t.Credit) - Data.Transactions.Sum(t => t.Debit)).ToString("C"))</td>
+                        <td class="px-6 py-3 text-sm text-red-500">@transaction.Debit.ToString("C")</td>
+                        <td class="px-6 py-3 text-sm text-green-500">@transaction.Credit.ToString("C")</td>
+                        <td class="px-6 py-3 text-sm text-gray-800">@transaction.Date.ToString("MM/dd/yyyy")</td>
+                        <td class="px-6 py-3 text-sm text-gray-800">@transaction.Description</td>
+                    </tr>
                 }
             </tbody>
         </table>
@@ -79,6 +86,7 @@
     private int? searchId = null;
     private string searchLabel = string.Empty;
     private List<Transaction> filteredTransactions = new List<Transaction>();
+    private bool noDataFound = false;
 
     protected override void OnInitialized()
     {
@@ -89,10 +97,13 @@
     private void HandleSearch()
     {
         filteredTransactions = Data.Transactions.Where(t =>
-            (string.IsNullOrEmpty(searchTitle) || t.Title.Contains(searchTitle, StringComparison.OrdinalIgnoreCase)) &&
+            (string.IsNullOrEmpty(searchTitle) || t.Title.Equals(searchTitle, StringComparison.OrdinalIgnoreCase)) &&  // Exact match for Title
             (!searchDate.HasValue || t.Date.Date == searchDate.Value.Date) &&
             (!searchId.HasValue || t.Id == searchId.Value) &&
-            (string.IsNullOrEmpty(searchLabel) || t.Description.Contains(searchLabel, StringComparison.OrdinalIgnoreCase))
+            (string.IsNullOrEmpty(searchLabel) || t.Description.Equals(searchLabel, StringComparison.OrdinalIgnoreCase))  // Exact match for Label
         ).ToList();
+
+        // Check if no data is found after filtering
+        noDataFound = filteredTransactions.Count == 0;
     }
 }
