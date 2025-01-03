@@ -1,1 +1,1 @@
-C:\Users\user\Documents\Final year subjects\Ai and dotnet\New folder\MauiApp1\MauiApp1.csproj;x64
+C:\Users\user\Documents\Final year subjects\MauiApp1\MauiApp1.csproj;x64

@@ -4,30 +4,40 @@
 @using MauiApp1.Components.Layout
 @inject UserService UserService
 
+
+
 <div class="container-fluid p-6">
-    <!-- Header Section -->
-    <div class="text-center py-12 bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg rounded-lg mb-8">
-        <h1 class="text-white text-5xl font-semibold mb-2">Dashboard</h1>
-        <p class="text-white text-xl font-light">A summary of your financial and loan details</p>
-    </div>
+   
 
     <!-- Transaction Summary Section -->
     <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h5 class="text-2xl font-semibold text-gray-700 text-center mb-4">Transaction Summary</h5>
+        <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Transaction Summary</h5>
         <div class="grid grid-cols-2 gap-6">
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-lg font-semibold text-gray-700">Total Credits</h6>
-                <p class="text-2xl text-green-600">@($"${Transactions.Sum(t => t.Credit):F2}")</p>
+                <h6 class="text-sm font-semibold text-gray-700">Total Credit</h6>
+                <p class="text-xl text-green-600">@($"${Transactions.Sum(t => t.Credit):F2}")</p>
             </div>
+
+
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-lg font-semibold text-gray-700">Total Debits</h6>
-                <p class="text-2xl text-red-600">@($"${Transactions.Sum(t => t.Debit):F2}")</p>
+                <h6 class="text-sm font-semibold text-gray-700">Total Debt</h6>
+                <p class="text-xl text-red-600">@($"${Transactions.Sum(t => t.Debit):F2}")</p>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
+                <p class="text-xl text-blue-600">@($"${Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}")</p>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Pending Loan Amount</h6>
+                <p class="text-xl text-yellow-600">@($"${Transactions.Sum(t => t.LoanAmount):F2}")</p>
             </div>
         </div>
     </div>
 
     <!-- Image Background Section -->
-    <div class="h-96 bg-cover bg-center rounded-lg" style="background-image: url('css/dotnet.jpg');">
+    <div class="h-80 bg-cover bg-center rounded-lg" style="background-image: url('css/dotnet.jpg');">
         <!-- Empty content; image serves as decoration -->
     </div>
 </div>
@@ -45,12 +55,5 @@
 
         // Load users from UserService when the component is initialized
         Users = UserService.LoadUsers();
-
-        // Calculate Total Amount (not used anymore)
-        var totalCredit = Transactions.Sum(t => t.Credit);
-        var totalDebit = Transactions.Sum(t => t.Debit);
-
-        // Calculate Loan Amount (not used anymore)
-        var LoanAmount = Transactions.Sum(t => t.LoanAmount); // This is now not needed
     }
 }

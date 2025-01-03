@@ -1,4 +1,5 @@
 ﻿@page "/Debt"
+@inject NavigationManager Navigation
 
 <div class="max-w-lg mx-auto mt-10 p-8 bg-white shadow-lg rounded-xl border border-gray-200">
     <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Add Debt</h2>
@@ -6,9 +7,9 @@
     <!-- Loan Amount -->
     <div class="mb-5">
         <label for="loanAmount" class="block text-lg font-medium text-gray-800">Loan Amount</label>
-        <input type="number" id="loanAmount"
+        <input type="number" id="loanAmount" min="1" step="any"
                class="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 placeholder-gray-500"
-               placeholder="Enter loan amount">
+               placeholder="Enter loan amount" required>
     </div>
 
     <!-- Description -->
@@ -16,7 +17,7 @@
         <label for="description" class="block text-lg font-medium text-gray-800">Description</label>
         <textarea id="description" rows="4"
                   class="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 placeholder-gray-500"
-                  placeholder="Enter a brief description"></textarea>
+                  placeholder="Enter a brief description" required></textarea>
     </div>
 
     <!-- Submit Button -->
@@ -30,7 +31,23 @@
     <!-- Message Display -->
     <div class="mt-5 text-center">
         <span id="successMessage" class="text-green-500 hidden font-medium">Loan taken successfully!</span>
-        <span id="errorMessage" class="text-red-500 hidden font-medium">Please fill out both fields.</span>
+        <span id="errorMessage" class="text-red-500 hidden font-medium">Please fill out both fields correctly.</span>
+    </div>
+</div>
+
+<!-- Custom Modal for Loan Confirmation -->
+<div id="confirmationModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Confirm Loan</h3>
+        <p class="text-gray-700 mb-4">Are you sure you want to take this loan? </p>
+        <div class="flex justify-between">
+            <button onclick="confirmLoan()" class="px-6 py-2 bg-green-600 text-white rounded-md shadow-md hover:bg-green-700 transition duration-300">
+                Take Loan
+            </button>
+            <button onclick="cancelLoan()" class="px-6 py-2 bg-red-600 text-white rounded-md shadow-md hover:bg-red-700 transition duration-300">
+                Cancel
+            </button>
+        </div>
     </div>
 </div>
 
@@ -45,11 +62,38 @@
         successMessage.classList.add('hidden');
         errorMessage.classList.add('hidden');
 
-        // Check if both fields are filled
+        // Check if both fields are filled and if the loan amount is valid
         if (loanAmount.trim() === '' || description.trim() === '') {
             errorMessage.classList.remove('hidden');
+        } else if (parseFloat(loanAmount) <= 0) {
+            // Check if loan amount is positive
+            errorMessage.textContent = "Loan amount must be greater than zero.";
+            errorMessage.classList.remove('hidden');
         } else {
-            successMessage.classList.remove('hidden');
+            // Show the custom modal for loan confirmation
+            document.getElementById('confirmationModal').classList.remove('hidden');
         }
+    }
+
+    function confirmLoan() {
+        // Show success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.remove('hidden');
+
+        // Hide the modal
+        document.getElementById('confirmationModal').classList.add('hidden');
+
+        // Redirect to the dashboard after successful submission
+        setTimeout(() => {
+            window.location.href = "/dashboard";  // Redirect to the dashboard
+        }, 1000); // Wait for 1 second to show the success message
+    }
+
+    function cancelLoan() {
+        // Hide the modal without submitting the loan
+        document.getElementById('confirmationModal').classList.add('hidden');
+
+        // Show an alert message
+        alert("Loan request cancelled.");
     }
 </script>

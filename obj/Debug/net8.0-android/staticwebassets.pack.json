@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
       "PackagePath": "staticwebassets\\MauiApp1.styles.css"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "PackagePath": "staticwebassets\\css\\dotnet.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
+      "Id": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

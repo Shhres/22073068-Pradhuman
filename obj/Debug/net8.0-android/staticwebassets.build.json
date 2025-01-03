@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bllE8FLHr4QLp3sveVzUj8dvqmI0HU0Wk2PervXkrno=",
+  "Hash": "7aq1UNpbB/Ju9N+DUxrTzkJMz1EmLAwdyt6GCbtr5l0=",
   "Source": "MauiApp1",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "MauiApp1\\wwwroot",
       "Source": "MauiApp1",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
       "SourceId": "MauiApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "MauiApp1#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css"
+      "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
       "SourceId": "MauiApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "MauiApp1#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\app.css",
       "SourceId": "MauiApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "SourceId": "MauiApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/dotnet#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\css\\dotnet.jpg"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\favicon.png",
       "SourceId": "MauiApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\index.html",
       "SourceId": "MauiApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -146,7 +146,7 @@
   "Endpoints": [
     {
       "Route": "css/app.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\app.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -167,7 +167,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 16:04:57 GMT"
+          "Value": "Wed, 01 Jan 2025 16:04:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -183,7 +183,7 @@
     },
     {
       "Route": "css/app.h35e2ij73l.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\app.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -204,7 +204,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 16:04:57 GMT"
+          "Value": "Wed, 01 Jan 2025 16:04:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -228,7 +228,7 @@
     },
     {
       "Route": "css/dotnet.cd8ubdvr0a.jpg",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -273,7 +273,7 @@
     },
     {
       "Route": "css/dotnet.jpg",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\css\\dotnet.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -310,7 +310,7 @@
     },
     {
       "Route": "favicon.ifv42okdf2.png",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -355,7 +355,7 @@
     },
     {
       "Route": "favicon.png",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -392,7 +392,7 @@
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -413,7 +413,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 16:06:33 GMT"
+          "Value": "Wed, 01 Jan 2025 16:06:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -429,7 +429,7 @@
     },
     {
       "Route": "index.ytq2hpl0as.html",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\wwwroot\\index.html",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -450,7 +450,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 16:06:33 GMT"
+          "Value": "Wed, 01 Jan 2025 16:06:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -474,7 +474,7 @@
     },
     {
       "Route": "MauiApp1.bundle.scp.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -495,7 +495,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -511,7 +511,7 @@
     },
     {
       "Route": "MauiApp1.dopgy7fttg.bundle.scp.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -532,7 +532,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -556,7 +556,7 @@
     },
     {
       "Route": "MauiApp1.dopgy7fttg.styles.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -577,7 +577,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -601,7 +601,7 @@
     },
     {
       "Route": "MauiApp1.styles.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -622,7 +622,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:08 GMT"
         },
         {
           "Name": "Cache-Control",

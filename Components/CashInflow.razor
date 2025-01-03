@@ -1,12 +1,16 @@
 ﻿@page "/CashInflow"
+@inject NavigationManager Navigation
+
 <h3 class="text-3xl font-bold mb-6 text-center text-indigo-700">Cash Inflow</h3>
 
-<form method="post" action="/submit-cashinflow" class="space-y-6 bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+<form method="post" @onsubmit="HandleSubmit" class="space-y-6 bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
     <div>
         <label for="amount" class="block text-lg font-medium text-gray-800">Amount:</label>
-        <input type="text" id="amount" name="amount" required 
-               class="mt-2 block w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600" />
+        <input type="number" id="amount" name="amount" required
+               class="mt-2 block w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600"
+               step="any" min="0" />
     </div>
+
 
     <div>
         <label for="description" class="block text-lg font-medium text-gray-800">Description:</label>
@@ -27,10 +31,25 @@
     </div>
 </form>
 
+@code {
+    private async Task HandleSubmit()
+    {
+        // Handle form submission logic here
+        // After successful submission, navigate to the dashboard
+        // You can also handle form processing (e.g., save data) here.
+
+        // For now, we simulate a successful submission by navigating to the dashboard
+        Navigation.NavigateTo("/dashboard");
+    }
+}
+
 <script>
-    // Prevent form submission for debugging purposes
-    document.querySelector('#cash-inflow-form').addEventListener('submit', function (e) {
+    // Prevent form submission for debugging purposes and show success message
+    document.querySelector('form').addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent actual form submission
         alert('Form submitted successfully!');
+
+        // You can also programmatically trigger the navigation here if needed
+        // window.location.href = "/dashboard"; // For non-Blazor applications
     });
 </script>
