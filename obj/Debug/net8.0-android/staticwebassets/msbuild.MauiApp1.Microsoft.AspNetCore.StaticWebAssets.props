@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>0unaidxmp5</Fingerprint>
-      <Integrity>KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=</Integrity>
+      <Fingerprint>dopgy7fttg</Fingerprint>
+      <Integrity>AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MauiApp1.styles.css'))</OriginalItemSpec>

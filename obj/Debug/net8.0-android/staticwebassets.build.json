@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HoWrik5/Np/Ifl0ELTdtx+ZiG5o04DyLmR+cQcUz/24=",
+  "Hash": "bllE8FLHr4QLp3sveVzUj8dvqmI0HU0Wk2PervXkrno=",
   "Source": "MauiApp1",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "0unaidxmp5",
-      "Integrity": "KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=",
+      "Fingerprint": "dopgy7fttg",
+      "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "0unaidxmp5",
-      "Integrity": "KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=",
+      "Fingerprint": "dopgy7fttg",
+      "Integrity": "AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css"
@@ -473,96 +473,6 @@
       ]
     },
     {
-      "Route": "MauiApp1.0unaidxmp5.bundle.scp.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6011"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:54:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0unaidxmp5"
-        },
-        {
-          "Name": "label",
-          "Value": "MauiApp1.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE="
-        }
-      ]
-    },
-    {
-      "Route": "MauiApp1.0unaidxmp5.styles.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6011"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:54:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0unaidxmp5"
-        },
-        {
-          "Name": "label",
-          "Value": "MauiApp1.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE="
-        }
-      ]
-    },
-    {
       "Route": "MauiApp1.bundle.scp.css",
       "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
       "Selectors": [],
@@ -573,7 +483,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6011"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -581,11 +491,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:54:11 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -595,7 +505,97 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
+        }
+      ]
+    },
+    {
+      "Route": "MauiApp1.dopgy7fttg.bundle.scp.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MauiApp1.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dopgy7fttg"
+        },
+        {
+          "Name": "label",
+          "Value": "MauiApp1.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
+        }
+      ]
+    },
+    {
+      "Route": "MauiApp1.dopgy7fttg.styles.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\Final year subjects\\Ai and dotnet\\New folder\\MauiApp1\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MauiApp1.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dopgy7fttg"
+        },
+        {
+          "Name": "label",
+          "Value": "MauiApp1.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     },
@@ -610,7 +610,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6011"
+          "Value": "4501"
         },
         {
           "Name": "Content-Type",
@@ -618,11 +618,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE=\""
+          "Value": "\"AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 14:54:11 GMT"
+          "Value": "Fri, 03 Jan 2025 03:48:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -632,7 +632,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KM3GRF4RM9dFN5BkJto6HCBeyFTvKne1HPiP2zXM4BE="
+          "Value": "sha256-AwxGeSmD9Z/c66NaaGP07C42e1McLrSSotpvizU2YVo="
         }
       ]
     }

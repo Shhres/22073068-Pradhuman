@@ -1,0 +1,101 @@
+﻿@page "/debit"
+
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+    <div class="card shadow-lg w-100" style="max-width: 600px;">
+        <div class="card-header text-center" style="background-color: #f8f9fa; color: black;">
+            <h3 class="mb-0 fw-bold">Debit Transaction</h3>
+        </div>
+        <div class="card-body p-4">
+            <form @onsubmit="HandleSubmit">
+                <!-- Description -->
+                <div class="mb-4">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-control" rows="1"
+                              style="height: 40px;"
+                              placeholder="Enter description" @bind="Description"></textarea>
+                </div>
+
+                <!-- Loan Amount -->
+                <div class="mb-4">
+                    <label for="loanAmount" class="form-label">Loan Amount</label>
+                    <input type="number" id="loanAmount" class="form-control"
+                           placeholder="Enter loan amount" @bind="LoanAmount" />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                    <button type="submit" class="btn btn-danger btn-lg">
+                        Submit
+                    </button>
+                </div>
+
+                <!-- Validation Message -->
+                @if (!string.IsNullOrEmpty(ValidationMessage))
+                {
+                    <div class="alert alert-danger text-center" role="alert">
+                        @ValidationMessage
+                    </div>
+                }
+
+                <!-- Success Message -->
+                @if (TransactionCompleted)
+                {
+                    <div class="alert alert-success text-center" role="alert">
+                        Transaction Completed
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string Description { get; set; } = string.Empty;
+    private int LoanAmount { get; set; } = 0;
+    private string ValidationMessage { get; set; } = string.Empty;
+    private bool TransactionCompleted { get; set; } = false;
+
+    private void HandleSubmit()
+    {
+        if (string.IsNullOrEmpty(Description) || LoanAmount <= 0)
+        {
+            ValidationMessage = "Please fill out all fields with valid data.";
+            TransactionCompleted = false;
+        }
+        else
+        {
+            ValidationMessage = string.Empty;
+            TransactionCompleted = true;
+
+            // Logic for processing (e.g., database save or API call)
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Loan Amount: {LoanAmount}");
+
+            // Reset fields
+            Description = string.Empty;
+            LoanAmount = 0;
+        }
+    }
+}
+
+<style>
+    .btn-danger {
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+    }
+
+    .form-control {
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+    }
+
+    .container-fluid {
+        padding: 15px;
+    }
+
+    .card-header h3 {
+        font-weight: bold;
+        color: black;
+    }
+</style>
