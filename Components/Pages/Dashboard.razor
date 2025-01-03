@@ -4,73 +4,53 @@
 @using MauiApp1.Components.Layout
 @inject UserService UserService
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-6">
     <!-- Header Section -->
-    <div class="text-center py-3 bg-primary">
-        <h1 class="mb-0" style="color: black; font-weight: bold;">Dashboard</h1>
-        <p class="mt-1" style="color: black; font-weight: bold;">A summary of your financial details</p>
+    <div class="text-center py-12 bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg rounded-lg mb-8">
+        <h1 class="text-white text-5xl font-semibold mb-2">Dashboard</h1>
+        <p class="text-white text-xl font-light">A summary of your financial and loan details</p>
     </div>
 
-    <!-- Total Amount Section -->
-    <div class="py-5 bg-white">
-        <div class="row mx-3">
-            <!-- Total Amount -->
-            <div class="col-md-12 text-center mb-4">
-                <h5>Total Amount</h5>
-                <div class="d-flex justify-content-center align-items-center">
-                    <span class="h4">
-                        @if (isAmountVisible)
-                        {
-                            <span>@($"${TotalAmount:F2}")</span>
-                        }
-                        else
-                        {
-                            <span>••••••</span>
-                        }
-                    </span>
-                    <button class="btn btn-link" @onclick="ToggleAmountVisibility">
-                        @if (isAmountVisible)
-                        {
-                            <i class="bi bi-eye-slash text-dark"></i>
-                        }
-                        else
-                        {
-                            <i class="bi bi-eye text-dark"></i>
-                        }
-                    </button>
-                </div>
+    <!-- Transaction Summary Section -->
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h5 class="text-2xl font-semibold text-gray-700 text-center mb-4">Transaction Summary</h5>
+        <div class="grid grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-lg font-semibold text-gray-700">Total Credits</h6>
+                <p class="text-2xl text-green-600">@($"${Transactions.Sum(t => t.Credit):F2}")</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-lg font-semibold text-gray-700">Total Debits</h6>
+                <p class="text-2xl text-red-600">@($"${Transactions.Sum(t => t.Debit):F2}")</p>
             </div>
         </div>
     </div>
 
     <!-- Image Background Section -->
-    <div class="vh-50" style="background-image: url('css/dotnet.jpg'); background-size: cover; background-position: center; height: 50vh;">
+    <div class="h-96 bg-cover bg-center rounded-lg" style="background-image: url('css/dotnet.jpg');">
         <!-- Empty content; image serves as decoration -->
     </div>
 </div>
 
 @code {
-    private bool isAmountVisible = false;
-    private decimal TotalAmount = 0m;
-
-    private AppData Data;
+    private AppData? Data;  // Use nullable reference type
     private List<User> Users = new List<User>();
 
     private List<Transaction> Transactions => Data?.Transactions ?? new List<Transaction>();
 
     protected override void OnInitialized()
     {
+        // Initialize Data
+        Data = new AppData(); // Make sure Data is initialized
+
         // Load users from UserService when the component is initialized
         Users = UserService.LoadUsers();
 
-        // Calculate Total Amount
+        // Calculate Total Amount (not used anymore)
         var totalCredit = Transactions.Sum(t => t.Credit);
         var totalDebit = Transactions.Sum(t => t.Debit);
-        TotalAmount = totalCredit - totalDebit;
-    }
 
-    private void ToggleAmountVisibility()
-    {
-        isAmountVisible = !isAmountVisible;
+        // Calculate Loan Amount (not used anymore)
+        var LoanAmount = Transactions.Sum(t => t.LoanAmount); // This is now not needed
     }
 }
