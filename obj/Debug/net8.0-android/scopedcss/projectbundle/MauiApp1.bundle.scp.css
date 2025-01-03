@@ -77,12 +77,11 @@ main[b-w4ahko8s4q] {
     }
 }
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
-/* Navbar Title Styling */
 .top-row[b-hl3llo7rh3] {
     height: 3.5rem;
     background-color: rgba(0,0,0,0.4);
     display: flex;
-    color:white;
+    color: white;
     align-items: center; /* Center vertically */
     padding-left: 1rem;
 }
@@ -116,6 +115,7 @@ main[b-w4ahko8s4q] {
 .nav-item[b-hl3llo7rh3] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem; /* Added margin to avoid congestion */
 }
 
     .nav-item:first-of-type[b-hl3llo7rh3] {
@@ -155,10 +155,19 @@ main[b-w4ahko8s4q] {
 /* Collapsible Navigation */
 .nav-scrollable[b-hl3llo7rh3] {
     display: none;
+    overflow-y: auto; /* Ensure content is scrollable */
+    max-height: 100vh; /* Prevent overflow */
+    padding-right: 0.5rem; /* Adjust padding to avoid congestion */
 }
 
 .navbar-toggler:checked ~ .nav-scrollable[b-hl3llo7rh3] {
     display: block;
+}
+
+/* Fix for small screen when the sidebar is toggled */
+.navbar-toggler:checked + .nav-scrollable[b-hl3llo7rh3] {
+    padding-top: 0.5rem; /* Adjust top padding when toggled */
+    padding-left: 1rem; /* Ensure spacing on the left */
 }
 
 @media (min-width: 641px) {
@@ -167,9 +176,11 @@ main[b-w4ahko8s4q] {
     }
 
     .nav-scrollable[b-hl3llo7rh3] {
-        /* Never collapse the sidebar for wide screens */
         display: block;
-        height: calc(100vh - 3.5rem);
+        height: calc(100vh - 3.5rem); /* Ensure full screen height */
         overflow-y: auto;
+        padding-top: 1rem; /* Add some space from the top */
     }
 }
+
+</style[b-hl3llo7rh3] >
