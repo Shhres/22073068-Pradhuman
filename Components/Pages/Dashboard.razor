@@ -13,7 +13,7 @@
 
             <!-- Total Credit Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Total Credit</h6>
+                <h6 class="text-sm font-semibold text-gray-700">Cash In Flow</h6>
                 <p class="text-xl text-green-600">
                     @(showAmounts ? $"₹{Transactions.Sum(t => t.Credit):F2}" : "***")
                 </p>
@@ -21,7 +21,7 @@
 
             <!-- Total Debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Total Debt</h6>
+                <h6 class="text-sm font-semibold text-gray-700">Cash Out Flow</h6>
                 <p class="text-xl text-red-600">
                     @(showAmounts ? $"₹{Transactions.Sum(t => t.Debit):F2}" : "***")
                 </p>
@@ -35,14 +35,29 @@
                 </p>
             </div>
 
-            <!-- Pending Loan Amount Section -->
+            <!-- debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Pending Loan Amount</h6>
+                <h6 class="text-sm font-semibold text-gray-700">Debt</h6>
                 <p class="text-xl text-yellow-600">
-                    @(showAmounts ? $"₹{GetPendingLoanAmount():F2}" : "***")
+                    @(showAmounts ? $"₹{GetDebt():F2}" : "***")
                 </p>
             </div>
 
+              <!-- Clear debt Section -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+              <h7 class="text-sm font-semibold text-gray-700">Clear Debt</h7>
+                <p class="text-xl text-yellow-600">
+                    @(showAmounts ? $"₹{GetClearDebt():F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Remaning debt Section -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h8="8" class="text-sm font-semibold text-gray-700">Remaning Debt</h8>
+                <p class="text-xl text-yellow-600">
+                    @(showAmounts ? $"₹{GetRemainingDebt():F2}" : "***")
+                </p>
+            </div>
         </div>
 
         <!-- Show/Hide Amounts Button -->
@@ -57,7 +72,6 @@
     </div>
 
 </div>
-
 @code {
     private AppData? Data;
     private List<User> Users = new List<User>();
@@ -70,7 +84,6 @@
     {
         // Initialize Data
         Data = UserService.LoadData(); // Ensure the data is loaded properly from UserService
-
         Users = UserService.LoadUsers();
     }
 
@@ -79,11 +92,21 @@
         showAmounts = !showAmounts;
     }
 
-    // Calculate the pending loan amount (filtering based on tags or transaction type)
-    private decimal GetPendingLoanAmount()
+    // Method to calculate total debt
+    private decimal GetDebt()
     {
-        return Transactions
-            .Where(t => t.Tags.Contains("Loan") && t.Debit > 0) // Adjust the condition as necessary for your system
-            .Sum(t => t.Debit); // Assuming the debit amount represents the loan amount
+        return Transactions.Where(t => t.Tags.Contains("Debt")).Sum(t => t.Debit);
+    }
+
+    // Method to calculate cleared debt
+    private decimal GetClearDebt()
+    {
+        return Transactions.Where(t => t.Tags.Contains("ClearDebt")).Sum(t => t.Credit);
+    }
+
+    // Method to calculate remaining debt
+    private decimal GetRemainingDebt()
+    {
+        return GetDebt() - GetClearDebt();
     }
 }
