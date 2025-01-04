@@ -1,99 +1,87 @@
 ﻿@page "/Debt"
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
-<div class="max-w-lg mx-auto mt-10 p-8 bg-white shadow-lg rounded-xl border border-gray-200">
+<div class="max-w-lg mx-auto mt-10 p-8 bg-white shadow-xl rounded-xl border border-gray-200">
     <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Add Debt</h2>
 
-    <!-- Loan Amount -->
-    <div class="mb-5">
+    <!-- Loan Amount Section -->
+    <div class="mb-5 relative">
         <label for="loanAmount" class="block text-lg font-medium text-gray-800">Loan Amount</label>
-        <input type="number" id="loanAmount" min="1" step="any"
+        <input type="number" id="loanAmount" @bind="LoanAmount" min="1" step="any"
                class="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 placeholder-gray-500"
-               placeholder="Enter loan amount" required>
+               placeholder="Enter loan amount" required
+               @oninput="ValidateLoanAmount" />
+
+        <!-- Hover Message for Negative Values -->
+        @if (showNegativeValueError)
+        {
+      
+        }
     </div>
 
-    <!-- Description -->
-    <div class="mb-5">
+    <!-- Description Section -->
+    <div class="mb-5 relative">
         <label for="description" class="block text-lg font-medium text-gray-800">Description</label>
-        <textarea id="description" rows="4"
+        <textarea id="description" @bind="Description" rows="4"
                   class="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 placeholder-gray-500"
-                  placeholder="Enter a brief description" required></textarea>
+                  placeholder="Enter a brief description" required />
+        @if (string.IsNullOrEmpty(Description))
+        {
+          
+        }
+    </div>
+
+    <!-- Loan Date Section -->
+    <div class="mb-5">
+        <label for="loanDate" class="block text-lg font-medium text-gray-800">Loan Date</label>
+        <input type="date" id="loanDate" @bind="LoanDate"
+               class="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 placeholder-gray-500"
+               required />
     </div>
 
     <!-- Submit Button -->
     <div>
-        <button onclick="handleSubmit()"
+        <button @onclick="HandleSubmit"
                 class="w-full bg-indigo-600 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 transform hover:scale-105 transition-all duration-300">
             Submit
         </button>
     </div>
-
-    <!-- Message Display -->
-    <div class="mt-5 text-center">
-        <span id="successMessage" class="text-green-500 hidden font-medium">Loan taken successfully!</span>
-        <span id="errorMessage" class="text-red-500 hidden font-medium">Please fill out both fields correctly.</span>
-    </div>
 </div>
 
-<!-- Custom Modal for Loan Confirmation -->
-<div id="confirmationModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Confirm Loan</h3>
-        <p class="text-gray-700 mb-4">Are you sure you want to take this loan? </p>
-        <div class="flex justify-between">
-            <button onclick="confirmLoan()" class="px-6 py-2 bg-green-600 text-white rounded-md shadow-md hover:bg-green-700 transition duration-300">
-                Take Loan
-            </button>
-            <button onclick="cancelLoan()" class="px-6 py-2 bg-red-600 text-white rounded-md shadow-md hover:bg-red-700 transition duration-300">
-                Cancel
-            </button>
-        </div>
-    </div>
-</div>
+@code {
+    private decimal LoanAmount { get; set; }
+    private string Description { get; set; } = string.Empty;
+    private DateTime LoanDate { get; set; } = DateTime.Now;
+    private bool showNegativeValueError { get; set; } = false;
 
-<script>
-    function handleSubmit() {
-        const loanAmount = document.getElementById('loanAmount').value;
-        const description = document.getElementById('description').value;
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-
-        // Reset messages
-        successMessage.classList.add('hidden');
-        errorMessage.classList.add('hidden');
-
-        // Check if both fields are filled and if the loan amount is valid
-        if (loanAmount.trim() === '' || description.trim() === '') {
-            errorMessage.classList.remove('hidden');
-        } else if (parseFloat(loanAmount) <= 0) {
-            // Check if loan amount is positive
-            errorMessage.textContent = "Loan amount must be greater than zero.";
-            errorMessage.classList.remove('hidden');
-        } else {
-            // Show the custom modal for loan confirmation
-            document.getElementById('confirmationModal').classList.remove('hidden');
+    // Validate the loan amount for negative values
+    private void ValidateLoanAmount()
+    {
+        if (LoanAmount <= 0)
+        {
+            showNegativeValueError = true;
+        }
+        else
+        {
+            showNegativeValueError = false;
         }
     }
 
-    function confirmLoan() {
-        // Show success message
-        const successMessage = document.getElementById('successMessage');
-        successMessage.classList.remove('hidden');
+    private async Task HandleSubmit()
+    {
+        // Check if form is complete and validate the fields
+        if (LoanAmount <= 0 || string.IsNullOrEmpty(Description))
+        {
+            // Show a message if fields are empty
+            await JS.InvokeVoidAsync("alert", "Please fill out all the fields before submitting.");
+            return;
+        }
 
-        // Hide the modal
-        document.getElementById('confirmationModal').classList.add('hidden');
+        // Show a success message
+        await JS.InvokeVoidAsync("alert", "Loan taken successfully!");
 
-        // Redirect to the dashboard after successful submission
-        setTimeout(() => {
-            window.location.href = "/dashboard";  // Redirect to the dashboard
-        }, 1000); // Wait for 1 second to show the success message
+        // Navigate to the dashboard after the user clicks "OK"
+        Navigation.NavigateTo("/dashboard");
     }
-
-    function cancelLoan() {
-        // Hide the modal without submitting the loan
-        document.getElementById('confirmationModal').classList.add('hidden');
-
-        // Show an alert message
-        alert("Loan request cancelled.");
-    }
-</script>
+}

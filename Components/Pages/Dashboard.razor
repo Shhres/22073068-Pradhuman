@@ -15,7 +15,7 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Credit</h6>
                 <p class="text-xl text-green-600">
-                    @(showAmounts ? $"${Transactions.Sum(t => t.Credit):F2}" : "***")
+                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Credit):F2}" : "***")
                 </p>
             </div>
 
@@ -23,7 +23,7 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Debt</h6>
                 <p class="text-xl text-red-600">
-                    @(showAmounts ? $"${Transactions.Sum(t => t.Debit):F2}" : "***")
+                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Debit):F2}" : "***")
                 </p>
             </div>
 
@@ -31,7 +31,7 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
                 <p class="text-xl text-blue-600">
-                    @(showAmounts ? $"${Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}" : "***")
+                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}" : "***")
                 </p>
             </div>
 
@@ -39,9 +39,10 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Pending Loan Amount</h6>
                 <p class="text-xl text-yellow-600">
-                    @(showAmounts ? $"${Transactions.Sum(t => t.LoanAmount):F2}" : "***")
+                    @(showAmounts ? $"₹{GetPendingLoanAmount():F2}" : "***")
                 </p>
             </div>
+
         </div>
 
         <!-- Show/Hide Amounts Button -->
@@ -58,25 +59,31 @@
 </div>
 
 @code {
-    private AppData? Data;  // Use nullable reference type
+    private AppData? Data;
     private List<User> Users = new List<User>();
 
-    private bool showAmounts = false; // Boolean to toggle showing amounts
+    private bool showAmounts = false;
 
     private List<Transaction> Transactions => Data?.Transactions ?? new List<Transaction>();
 
     protected override void OnInitialized()
     {
         // Initialize Data
-        Data = new AppData(); // Make sure Data is initialized
+        Data = UserService.LoadData(); // Ensure the data is loaded properly from UserService
 
-        // Load users from UserService when the component is initialized
         Users = UserService.LoadUsers();
     }
 
-    // Method to toggle the visibility of amounts
     private void ToggleAmountsVisibility()
     {
         showAmounts = !showAmounts;
+    }
+
+    // Calculate the pending loan amount (filtering based on tags or transaction type)
+    private decimal GetPendingLoanAmount()
+    {
+        return Transactions
+            .Where(t => t.Tags.Contains("Loan") && t.Debit > 0) // Adjust the condition as necessary for your system
+            .Sum(t => t.Debit); // Assuming the debit amount represents the loan amount
     }
 }

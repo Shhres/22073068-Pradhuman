@@ -1,4 +1,8 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using MauiApp1.Models; // Adjust namespace as per your project structure
@@ -15,7 +19,8 @@ public class UserService
     {
         if (!File.Exists(FilePath))
         {
-            // If the file doesn't exist, return a new AppData object
+            // If the file doesn't exist, create a new file with default data
+            SaveData(new AppData());  // Create an empty file with default data
             return new AppData();
         }
 
@@ -67,6 +72,26 @@ public class UserService
         SaveData(appData);
     }
 
+    // Add a new user to the app data
+    public void AddUser(User user)
+    {
+        var appData = LoadData();
+        appData.Users.Add(user);
+        SaveData(appData);
+    }
+
+    // Remove a user from the app data by their ID
+    public void RemoveUser(Guid userId)
+    {
+        var appData = LoadData();
+        var user = appData.Users.FirstOrDefault(u => u.Id == userId);
+        if (user != null)
+        {
+            appData.Users.Remove(user);
+            SaveData(appData);
+        }
+    }
+
     // Hash a password securely
     public string HashPassword(string password)
     {
@@ -89,6 +114,26 @@ public class UserService
         if (!Directory.Exists(FolderPath))
         {
             Directory.CreateDirectory(FolderPath);
+        }
+    }
+
+    // Add a new transaction to the app data
+    public void AddTransaction(Transaction transaction)
+    {
+        var appData = LoadData();
+        appData.Transactions.Add(transaction);
+        SaveData(appData);
+    }
+
+    // Remove a transaction from the app data by its ID
+    public void RemoveTransaction(Guid transactionId)
+    {
+        var appData = LoadData();
+        var transaction = appData.Transactions.FirstOrDefault(t => t.Id == transactionId);
+        if (transaction != null)
+        {
+            appData.Transactions.Remove(transaction);
+            SaveData(appData);
         }
     }
 }
