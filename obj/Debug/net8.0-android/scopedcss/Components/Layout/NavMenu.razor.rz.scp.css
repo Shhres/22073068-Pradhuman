@@ -1,10 +1,12 @@
+/* Top Navbar */
 .top-row[b-hl3llo7rh3] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 128, 0.7); /* Navy blue with transparency */
     display: flex;
     color: white;
     align-items: center; /* Center vertically */
     padding-left: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
     .top-row span[b-hl3llo7rh3] {
@@ -26,6 +28,7 @@
     right: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+    border-radius: 4px; /* Rounded button */
 }
 
     .navbar-toggler:checked[b-hl3llo7rh3] {
@@ -54,11 +57,11 @@
         display: flex;
         align-items: center;
         line-height: 3rem;
+        padding-left: 0.5rem;
     }
 
-        /* Add gap between the icon and text */
         .nav-item[b-hl3llo7rh3]  a i {
-            margin-right: 10px; /* 5px gap between icon and text */
+            margin-right: 10px; /* Gap between icon and text */
         }
 
         .nav-item[b-hl3llo7rh3]  a.active {
@@ -68,7 +71,7 @@
         }
 
         .nav-item[b-hl3llo7rh3]  a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly darker hover effect */
             color: white;
             margin-left: 5px;
         }
@@ -103,5 +106,3 @@
         padding-top: 1rem; /* Add some space from the top */
     }
 }
-
-</style[b-hl3llo7rh3] >

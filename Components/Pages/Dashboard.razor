@@ -7,6 +7,66 @@
 <div class="container-fluid p-6">
 
     <!-- Transaction Summary Section -->
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-4">
+        <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Filter Transactions</h5>
+        <select class="form-select w-full" @onchange="OnFilterChanged">
+            <option value="All">All Transactions</option>
+            <option value="Highest">Highest Transactions</option>
+            <option value="Lowest">Lowest Transactions</option>
+        </select>
+        <button class="text-lg text-blue-500 mt-4 w-full py-2" @onclick="ApplyTopFiveFilter">Search</button>
+    </div>
+
+    <!-- Top 5 Transactions Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Highest Transactions Card -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Top 5 Highest Transactions</h5>
+            <div class="space-y-4">
+                @foreach (var transaction in GetTopHighestTransactions())
+                {
+                    <div class="bg-gray-50 p-4 rounded-lg shadow flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold text-gray-700">Transaction @(GetTopHighestTransactions().IndexOf(transaction) + 1)</p>
+                            <p class="text-sm text-gray-500">@transaction.Date.ToShortDateString()</p>
+                        </div>
+                        <p class="text-lg text-green-600 font-medium">
+                            @(showAmounts ? $"₹{transaction.Credit:F2}" : "***")
+                        </p>
+                    </div>
+                }
+                @if (!GetTopHighestTransactions().Any())
+                {
+                    <p class="text-gray-500 text-center py-4">No transactions above ₹10,000</p>
+                }
+            </div>
+        </div>
+
+        <!-- Lowest Transactions Card -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Top 5 Lowest Transactions</h5>
+            <div class="space-y-4">
+                @foreach (var transaction in GetTopLowestTransactions())
+                {
+                    <div class="bg-gray-50 p-4 rounded-lg shadow flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold text-gray-700">Transaction @(GetTopLowestTransactions().IndexOf(transaction) + 1)</p>
+                            <p class="text-sm text-gray-500">@transaction.Date.ToShortDateString()</p>
+                        </div>
+                        <p class="text-lg text-red-600 font-medium">
+                            @(showAmounts ? $"₹{transaction.Debit:F2}" : "***")
+                        </p>
+                    </div>
+                }
+                @if (!GetTopLowestTransactions().Any())
+                {
+                    <p class="text-gray-500 text-center py-4">No transactions below ₹10,000</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Summary Section -->
     <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
         <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Transaction Summary</h5>
         <div class="grid grid-cols-2 gap-6">
@@ -15,7 +75,7 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Cash In Flow</h6>
                 <p class="text-xl text-green-600">
-                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Credit):F2}" : "***")
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit):F2}" : "***")
                 </p>
             </div>
 
@@ -23,7 +83,7 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Cash Out Flow</h6>
                 <p class="text-xl text-red-600">
-                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Debit):F2}" : "***")
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
                 </p>
             </div>
 
@@ -31,11 +91,11 @@
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
                 <p class="text-xl text-blue-600">
-                    @(showAmounts ? $"₹{Transactions.Sum(t => t.Credit) - Transactions.Sum(t => t.Debit):F2}" : "***")
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit) - FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
                 </p>
             </div>
 
-            <!-- debt Section -->
+            <!-- Debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
                 <h6 class="text-sm font-semibold text-gray-700">Debt</h6>
                 <p class="text-xl text-yellow-600">
@@ -43,17 +103,17 @@
                 </p>
             </div>
 
-              <!-- Clear debt Section -->
+            <!-- Clear Debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-              <h7 class="text-sm font-semibold text-gray-700">Clear Debt</h7>
+                <h6 class="text-sm font-semibold text-gray-700">Clear Debt</h6>
                 <p class="text-xl text-yellow-600">
                     @(showAmounts ? $"₹{GetClearDebt():F2}" : "***")
                 </p>
             </div>
 
-            <!-- Remaning debt Section -->
+            <!-- Remaining Debt Section -->
             <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h8="8" class="text-sm font-semibold text-gray-700">Remaning Debt</h8>
+                <h6 class="text-sm font-semibold text-gray-700">Remaining Debt</h6>
                 <p class="text-xl text-yellow-600">
                     @(showAmounts ? $"₹{GetRemainingDebt():F2}" : "***")
                 </p>
@@ -72,19 +132,42 @@
     </div>
 
 </div>
+
 @code {
     private AppData? Data;
     private List<User> Users = new List<User>();
 
     private bool showAmounts = false;
+    private string selectedFilter = "All";
 
     private List<Transaction> Transactions => Data?.Transactions ?? new List<Transaction>();
+
+    private List<Transaction> FilteredTransactions { get; set; } = new List<Transaction>();
 
     protected override void OnInitialized()
     {
         // Initialize Data
-        Data = UserService.LoadData(); // Ensure the data is loaded properly from UserService
+        Data = UserService.LoadData();
         Users = UserService.LoadUsers();
+        FilteredTransactions = Transactions;
+    }
+
+    private List<Transaction> GetTopHighestTransactions()
+    {
+        return Transactions
+            .Where(t => t.Credit > 10000)
+            .OrderByDescending(t => t.Credit)
+            .Take(5)
+            .ToList();
+    }
+
+    private List<Transaction> GetTopLowestTransactions()
+    {
+        return Transactions
+            .Where(t => t.Debit < 10000)
+            .OrderBy(t => t.Debit)
+            .Take(5)
+            .ToList();
     }
 
     private void ToggleAmountsVisibility()
@@ -92,21 +175,39 @@
         showAmounts = !showAmounts;
     }
 
-    // Method to calculate total debt
     private decimal GetDebt()
     {
-        return Transactions.Where(t => t.Tags.Contains("Debt")).Sum(t => t.Debit);
+        return FilteredTransactions.Where(t => t.Tags.Contains("Debt")).Sum(t => t.Debit);
     }
 
-    // Method to calculate cleared debt
     private decimal GetClearDebt()
     {
-        return Transactions.Where(t => t.Tags.Contains("ClearDebt")).Sum(t => t.Credit);
+        return FilteredTransactions.Where(t => t.Tags.Contains("ClearDebt")).Sum(t => t.Credit);
     }
 
-    // Method to calculate remaining debt
     private decimal GetRemainingDebt()
     {
         return GetDebt() - GetClearDebt();
+    }
+
+    private void OnFilterChanged(ChangeEventArgs e)
+    {
+        selectedFilter = e.Value?.ToString() ?? "All";
+        FilteredTransactions = selectedFilter switch
+        {
+            "Highest" => Transactions.Where(t => t.Credit > 5000).OrderByDescending(t => t.Credit).Take(5).ToList(),
+            "Lowest" => Transactions.Where(t => t.Debit < 5000).OrderBy(t => t.Debit).Take(5).ToList(),
+            _ => Transactions
+        };
+    }
+
+    private void ApplyTopFiveFilter()
+    {
+        FilteredTransactions = selectedFilter switch
+        {
+            "Highest" => Transactions.Where(t => t.Credit > 5000).OrderByDescending(t => t.Credit).Take(5).ToList(),
+            "Lowest" => Transactions.Where(t => t.Debit < 5000).OrderBy(t => t.Debit).Take(5).ToList(),
+            _ => Transactions
+        };
     }
 }

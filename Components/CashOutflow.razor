@@ -18,8 +18,19 @@
 
     <div>
         <label for="tags" class="block text-lg font-medium text-gray-800">Tags:</label>
-        <input type="text" id="tags" name="tags" @bind="Tags" required
-               class="mt-3 block w-full px-6 py-4 border-2 border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 transition duration-300" />
+        <select id="tags" name="tags" @bind="Tags" required
+                class="mt-3 block w-full px-6 py-4 border-2 border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 transition duration-300">
+            <option value="">Select a category</option>
+            <option value="Food">🍔 Food</option>
+            <option value="Drinks">🍺 Drinks</option>
+            <option value="Clothes">👕 Clothes</option>
+            <option value="Gadgets">📱 Gadgets</option>
+            <option value="Miscellaneous">🧳 Miscellaneous</option>
+            <option value="Fuel">⛽ Fuel</option>
+            <option value="Rent">🏡 Rent</option>
+            <option value="EMI">💸 EMI</option>
+            <option value="Party">🎉 Party</option>
+        </select>
         @if (!string.IsNullOrEmpty(TagsError))
         {
             <div class="text-red-600 text-sm mt-1">@TagsError</div>
@@ -60,7 +71,7 @@
     <div class="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
         <div class="bg-white p-8 rounded-lg shadow-xl transform transition duration-300 scale-95 hover:scale-100">
             <h2 class="text-2xl font-bold text-center text-green-600">Transaction Successful!</h2>
-            <p class="mt-4 text-center text-gray-700">Your transaction of <strong>@Debit</strong> has been successfully sent.</p>
+            <p class="mt-4 text-center text-gray-700">Your transaction of <strong>@Debit</strong> has been successfully recorded.</p>
             <div class="mt-6 text-center">
                 <button class="px-8 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-200" @onclick="CloseSuccessPopup">OK</button>
             </div>

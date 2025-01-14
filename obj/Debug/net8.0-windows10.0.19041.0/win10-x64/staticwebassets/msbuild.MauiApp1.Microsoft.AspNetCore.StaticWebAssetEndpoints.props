@@ -48,17 +48,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ytq2hpl0as"},{"Name":"integrity","Value":"sha256-qgaaD6lh\u002BrGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs="},{"Name":"label","Value":"index.html"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1301"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022qgaaD6lh\u002BrGTYxKPxRLKB5VZl7gXRjrlxECXSptZnrs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 01 Jan 2025 16:06:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="MauiApp1.c4nsfuiyrz.styles.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MauiApp1.styles.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c4nsfuiyrz"},{"Name":"integrity","Value":"sha256-DKveuCSYz7Bq5YFy0CJc85rQ2DM5E09Z16PSlbTETGw="},{"Name":"label","Value":"MauiApp1.styles.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6242"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022DKveuCSYz7Bq5YFy0CJc85rQ2DM5E09Z16PSlbTETGw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 05 Jan 2025 04:54:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="MauiApp1.styles.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MauiApp1.styles.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MEf0hwrNEsnVG/Wjh\u002B0du\u002BxXr7pn7s73ZFrRAqNeh4Y="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5019"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022MEf0hwrNEsnVG/Wjh\u002B0du\u002BxXr7pn7s73ZFrRAqNeh4Y=\u0022"},{"Name":"Last-Modified","Value":"Fri, 03 Jan 2025 22:03:52 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="MauiApp1.wgf2qhk21w.styles.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\MauiApp1.styles.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wgf2qhk21w"},{"Name":"integrity","Value":"sha256-MEf0hwrNEsnVG/Wjh\u002B0du\u002BxXr7pn7s73ZFrRAqNeh4Y="},{"Name":"label","Value":"MauiApp1.styles.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5019"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022MEf0hwrNEsnVG/Wjh\u002B0du\u002BxXr7pn7s73ZFrRAqNeh4Y=\u0022"},{"Name":"Last-Modified","Value":"Fri, 03 Jan 2025 22:03:52 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DKveuCSYz7Bq5YFy0CJc85rQ2DM5E09Z16PSlbTETGw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6242"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022DKveuCSYz7Bq5YFy0CJc85rQ2DM5E09Z16PSlbTETGw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 05 Jan 2025 04:54:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

@@ -1,52 +1,88 @@
 /* /Components/Layout/MainLayout.razor.rz.scp.css */
+/* Page Container */
 .page[b-w4ahko8s4q] {
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Main Content */
 main[b-w4ahko8s4q] {
     flex: 1;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
 }
 
+/* Sidebar Styling */
 .sidebar[b-w4ahko8s4q] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Navbar (Top Row) */
 .top-row[b-w4ahko8s4q] {
-    background-color: #f7f7f7;
+    background-color: #e0f7fa; /* Light teal background */
     border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 4rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-    .top-row[b-w4ahko8s4q]  a, .top-row[b-w4ahko8s4q]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
+    /* Hover Effect for Navbar */
+    .top-row:hover[b-w4ahko8s4q] {
+        background-color: #000; /* Change to black on hover */
+        color: white; /* White text on hover */
     }
 
-        .top-row[b-w4ahko8s4q]  a:hover, .top-row[b-w4ahko8s4q]  .btn-link:hover {
-            text-decoration: underline;
+    /* Links in Navbar */
+    .top-row a[b-w4ahko8s4q], .top-row .btn-link[b-w4ahko8s4q] {
+        white-space: nowrap;
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: #00796b; /* Dark teal text */
+        background-color: #ffffff;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        /* Hover Effect for Links */
+        .top-row a:hover[b-w4ahko8s4q], .top-row .btn-link:hover[b-w4ahko8s4q] {
+            background-color: #ddd;
+            color: #000;
+            text-decoration: none;
         }
 
-        .top-row[b-w4ahko8s4q]  a:first-child {
+        .top-row a:first-child[b-w4ahko8s4q] {
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
+/* Responsive Styling */
 @media (max-width: 640.98px) {
     .top-row[b-w4ahko8s4q] {
         justify-content: space-between;
+        padding: 0 1rem;
     }
 
-        .top-row[b-w4ahko8s4q]  a, .top-row[b-w4ahko8s4q]  .btn-link {
+        .top-row a[b-w4ahko8s4q], .top-row .btn-link[b-w4ahko8s4q] {
             margin-left: 0;
+            padding: 0.3rem 0.6rem;
         }
 }
 
+/* Sidebar on Larger Screens */
 @media (min-width: 641px) {
     .page[b-w4ahko8s4q] {
         flex-direction: row;
@@ -59,31 +95,27 @@ main[b-w4ahko8s4q] {
         top: 0;
     }
 
-    .top-row[b-w4ahko8s4q] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-        .top-row.auth[b-w4ahko8s4q]  a:first-child {
-            flex: 1;
-            text-align: right;
-            width: 0;
-        }
-
     .top-row[b-w4ahko8s4q], article[b-w4ahko8s4q] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
+
+        .top-row.auth a:first-child[b-w4ahko8s4q] {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
 }
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
+/* Top Navbar */
 .top-row[b-hl3llo7rh3] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 128, 0.7); /* Navy blue with transparency */
     display: flex;
     color: white;
     align-items: center; /* Center vertically */
     padding-left: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
     .top-row span[b-hl3llo7rh3] {
@@ -105,6 +137,7 @@ main[b-w4ahko8s4q] {
     right: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+    border-radius: 4px; /* Rounded button */
 }
 
     .navbar-toggler:checked[b-hl3llo7rh3] {
@@ -133,11 +166,11 @@ main[b-w4ahko8s4q] {
         display: flex;
         align-items: center;
         line-height: 3rem;
+        padding-left: 0.5rem;
     }
 
-        /* Add gap between the icon and text */
         .nav-item[b-hl3llo7rh3]  a i {
-            margin-right: 10px; /* 5px gap between icon and text */
+            margin-right: 10px; /* Gap between icon and text */
         }
 
         .nav-item[b-hl3llo7rh3]  a.active {
@@ -147,7 +180,7 @@ main[b-w4ahko8s4q] {
         }
 
         .nav-item[b-hl3llo7rh3]  a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly darker hover effect */
             color: white;
             margin-left: 5px;
         }
@@ -182,5 +215,3 @@ main[b-w4ahko8s4q] {
         padding-top: 1rem; /* Add some space from the top */
     }
 }
-
-</style[b-hl3llo7rh3] >

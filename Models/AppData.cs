@@ -12,9 +12,25 @@ namespace MauiApp1.Models
         public List<User> Users { get; set; } = new();
         public List<Transaction> Transactions { get; set; } = new();
 
-        // Add Balance and LoanAmount properties
-        public decimal Balance { get; set; } = 0m;  // Initialize with a default value if needed
-        public decimal PendingLoanAmount { get; set; } = 0m;
-        // Initialize with a default value if needed
+        public List<Debt> Debts { get; set; } = new();
+
+        // Method to add a debt
+        public void AddDebt(Debt debt)
+        {
+            Debts.Add(debt);
+        }
+        // Method to get the highest transaction (by Credit)
+        public Transaction? GetHighestTransaction()
+        {
+            return Transactions.OrderByDescending(t => t.Credit).FirstOrDefault();
+        }
+
+        // Method to get the lowest transaction (by Debit)
+        public Transaction? GetLowestTransaction()
+        {
+            return Transactions.OrderBy(t => t.Debit).FirstOrDefault();
+        }
+
     }
 }
+
