@@ -4,30 +4,105 @@
 @using MauiApp1.Components.Layout
 @inject UserService UserService
 
-<div class="container-fluid p-6">
+<div class="container mx-auto p-6">
 
     <!-- Transaction Summary Section -->
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-4">
-        <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Filter Transactions</h5>
-        <select class="form-select w-full" @onchange="OnFilterChanged">
-            <option value="All">All Transactions</option>
-            <option value="Highest">Highest Transactions</option>
-            <option value="Lowest">Lowest Transactions</option>
-        </select>
-        <button class="text-lg text-blue-500 mt-4 w-full py-2" @onclick="ApplyTopFiveFilter">Search</button>
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h5 class="text-2xl font-bold text-gray-800 text-center mb-6">Transaction Summary</h5>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Cash In Flow -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Cash In Flow</h6>
+                <p class="text-2xl text-green-600 font-bold">
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit):F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Cash Out Flow -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Cash Out Flow</h6>
+                <p class="text-2xl text-red-600 font-bold">
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Total Amount -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
+                <p class="text-2xl text-blue-600 font-bold">
+                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit) - FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Debt -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Debt</h6>
+                <p class="text-2xl text-yellow-600 font-bold">
+                    @(showAmounts ? $"₹{GetDebt():F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Clear Debt -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Clear Debt</h6>
+                <p class="text-2xl text-yellow-600 font-bold">
+                    @(showAmounts ? $"₹{GetClearDebt():F2}" : "***")
+                </p>
+            </div>
+
+            <!-- Remaining Debt -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                <h6 class="text-sm font-semibold text-gray-700">Remaining Debt</h6>
+                <p class="text-2xl text-yellow-600 font-bold">
+                    @(showAmounts ? $"₹{GetRemainingDebt():F2}" : "***")
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Toggle Amounts Button -->
+        <button class="bg-blue-600 text-white mt-6 w-full py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                @onclick="ToggleAmountsVisibility">
+            @(showAmounts ? "Hide Amounts" : "Show Amounts")
+        </button>
+    </div>
+
+    <!-- Image Background Section -->
+    <div class="h-80 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('css/dotnet.jpg');">
+    </div>
+
+
+
+    <!-- Filter Transactions Section -->
+    <div class="bg-white shadow rounded-lg p-6 mb-6">
+        <h5 class="text-2xl font-bold text-gray-800 text-center mb-6">Filter Transactions</h5>
+        <div class="flex items-center gap-4">
+            <select class="form-select w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    @onchange="OnFilterChanged">
+                <option value="All">All Transactions</option>
+                @* <option value="Highest">Highest Transactions</option> *@
+                @* <option value="Lowest">Lowest Transactions</option> *@
+            </select>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    @onclick="ApplyTopFiveFilter">
+                Search
+            </button>
+        </div>
     </div>
 
     <!-- Top 5 Transactions Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
         <!-- Highest Transactions Card -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Top 5 Highest Transactions</h5>
+        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-200">
+            <h5 class="text-xl font-bold text-gray-800 text-center mb-4">Top 5 Highest Transactions</h5>
             <div class="space-y-4">
                 @foreach (var transaction in GetTopHighestTransactions())
                 {
-                    <div class="bg-gray-50 p-4 rounded-lg shadow flex justify-between items-center">
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
                         <div>
-                            <p class="font-semibold text-gray-700">Transaction @(GetTopHighestTransactions().IndexOf(transaction) + 1)</p>
+                            <p class="font-semibold text-gray-700">Credit @(GetTopHighestTransactions().IndexOf(transaction) + 1)</p>
                             <p class="text-sm text-gray-500">@transaction.Date.ToShortDateString()</p>
                         </div>
                         <p class="text-lg text-green-600 font-medium">
@@ -43,14 +118,14 @@
         </div>
 
         <!-- Lowest Transactions Card -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Top 5 Lowest Transactions</h5>
+        <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-200">
+            <h5 class="text-xl font-bold text-gray-800 text-center mb-4">Top 5 Lowest Transactions</h5>
             <div class="space-y-4">
                 @foreach (var transaction in GetTopLowestTransactions())
                 {
-                    <div class="bg-gray-50 p-4 rounded-lg shadow flex justify-between items-center">
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
                         <div>
-                            <p class="font-semibold text-gray-700">Transaction @(GetTopLowestTransactions().IndexOf(transaction) + 1)</p>
+                            <p class="font-semibold text-gray-700">Debit @(GetTopLowestTransactions().IndexOf(transaction) + 1)</p>
                             <p class="text-sm text-gray-500">@transaction.Date.ToShortDateString()</p>
                         </div>
                         <p class="text-lg text-red-600 font-medium">
@@ -64,73 +139,8 @@
                 }
             </div>
         </div>
+
     </div>
-
-    <!-- Transaction Summary Section -->
-    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h5 class="text-xl font-bold text-gray-700 text-center mb-4">Transaction Summary</h5>
-        <div class="grid grid-cols-2 gap-6">
-
-            <!-- Total Credit Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Cash In Flow</h6>
-                <p class="text-xl text-green-600">
-                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit):F2}" : "***")
-                </p>
-            </div>
-
-            <!-- Total Debt Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Cash Out Flow</h6>
-                <p class="text-xl text-red-600">
-                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
-                </p>
-            </div>
-
-            <!-- Total Amount Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Total Amount</h6>
-                <p class="text-xl text-blue-600">
-                    @(showAmounts ? $"₹{FilteredTransactions.Sum(t => t.Credit) - FilteredTransactions.Sum(t => t.Debit):F2}" : "***")
-                </p>
-            </div>
-
-            <!-- Debt Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Debt</h6>
-                <p class="text-xl text-yellow-600">
-                    @(showAmounts ? $"₹{GetDebt():F2}" : "***")
-                </p>
-            </div>
-
-            <!-- Clear Debt Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Clear Debt</h6>
-                <p class="text-xl text-yellow-600">
-                    @(showAmounts ? $"₹{GetClearDebt():F2}" : "***")
-                </p>
-            </div>
-
-            <!-- Remaining Debt Section -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow">
-                <h6 class="text-sm font-semibold text-gray-700">Remaining Debt</h6>
-                <p class="text-xl text-yellow-600">
-                    @(showAmounts ? $"₹{GetRemainingDebt():F2}" : "***")
-                </p>
-            </div>
-        </div>
-
-        <!-- Show/Hide Amounts Button -->
-        <button class="text-lg text-blue-500 mt-4 w-full py-2" @onclick="ToggleAmountsVisibility">
-            @(showAmounts ? "Hide Amounts" : "Show Amounts")
-        </button>
-    </div>
-
-    <!-- Image Background Section -->
-    <div class="h-80 bg-cover bg-center rounded-lg" style="background-image: url('css/dotnet.jpg');">
-        <!-- Empty content; image serves as decoration -->
-    </div>
-
 </div>
 
 @code {
@@ -164,11 +174,12 @@
     private List<Transaction> GetTopLowestTransactions()
     {
         return Transactions
-            .Where(t => t.Debit < 10000)
-            .OrderBy(t => t.Debit)
-            .Take(5)
+            .Where(t => t.Debit > 0 && t.Debit < 10000)  
+            .OrderBy(t => t.Debit)                       
+            .Take(5)                                    
             .ToList();
     }
+
 
     private void ToggleAmountsVisibility()
     {
