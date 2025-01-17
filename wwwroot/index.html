@@ -29,6 +29,21 @@
 
     <script src="_framework/blazor.webview.js" autostart="false"></script>
 
+    <!--<script>
+        function createDownloadLink(csvContent, fileName) {
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        }
+
+        function triggerFileInput() {
+            document.getElementById('fileInput').click();
+        }
+
+    </script>-->
+
     <script>
         function createDownloadLink(csvContent, fileName) {
             const blob = new Blob([csvContent], { type: 'text/csv' });
@@ -42,7 +57,14 @@
             document.getElementById('fileInput').click();
         }
 
+        function generatePdf(htmlContent, fileName) {
+            const win = window.open('', '_blank');
+            win.document.write(htmlContent);
+            win.document.close();
+            win.print();
+        }
     </script>
+
 
 </body>
 

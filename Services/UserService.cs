@@ -136,4 +136,11 @@ public class UserService
             SaveData(appData);
         }
     }
+
+    //public Guid GetLoggedInUserId()
+    //{
+    //    // Return the user ID from the session or authentication context
+    //    return CurrentUser.Id;
+    //}
+
 }

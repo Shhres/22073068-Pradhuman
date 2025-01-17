@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+
+
 namespace MauiApp1.Models
 {
     public class Transaction
@@ -12,5 +14,6 @@ namespace MauiApp1.Models
         public decimal Credit { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
+        public Guid UserId { get; set; } // New property to associate with a user
     }
 }

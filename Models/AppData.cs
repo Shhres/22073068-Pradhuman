@@ -12,6 +12,12 @@ namespace MauiApp1.Models
         public List<User> Users { get; set; } = new();
         public List<Transaction> Transactions { get; set; } = new();
 
+        public List<Transaction> GetTransactionsForUser(Guid userId)
+        {
+            return Transactions.Where(t => t.UserId == userId).ToList();
+        }
+
+
         public List<Debt> Debts { get; set; } = new();
 
         // Method to add a debt
